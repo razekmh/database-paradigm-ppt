@@ -1,0 +1,28 @@
+curl -XPUT 'http://localhost:9200/names' -H 'Content-Type: application/json' -d ' {
+"mappings": {
+    "properties": {
+        "first_name": {
+            "type": "keyword"
+        }
+
+        ,
+        "last_name": {
+            "type": "keyword"
+        }
+    }
+}
+}
+'
+
+curl -H "Content-Type: application/json" -XPOST "http://localhost:9200/names/_doc/1" -d '{"first_name": "John","last_name": "Smith"}'
+
+
+curl -XPOST 'http://localhost:9200/names/_search' -H "Content-Type: application/json" -d '{
+    "query": {
+        "match": {
+            "first_name": "John"
+        }
+    }
+}'
+
+curl -H "Content-Type: application/x-ndjson" -XPOST "localhost:9200/names/doc/_bulk?pretty" --data-binary "@.json"
