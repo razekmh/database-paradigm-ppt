@@ -23,6 +23,12 @@ def clean_email_attr(email_attr):
     cleaned_email = re.findall(r'[\w.+-]+@[\w-]+\.[\w.-]+', email_attr)
     return cleaned_email
 
+def clean_subject_body(email_attr):
+    # clean the email attributes
+    # takes in a string of email attributes and resturns a list of cleaned email attributes
+    cleaned_email = re.sub('\t|\n|\r| +',' ', email_attr)
+    return cleaned_email
+
 def merge_attr_and_x(email_attr, email_attr_x):
     # merge the email attributes and X-attributes
     # takes in a string of email attributes and a string of X-attributes
@@ -65,7 +71,7 @@ def extract_email_data(main_folder, file_path, sub_folder=None):
             # extract X-bcc
             email_x_bcc = parsed_mail['X-bcc']
             # extract the email body
-            email_body = parsed_mail.get_payload().replace('"','\\"')
+            email_body = parsed_mail.get_payload().replace('"','\'')
 
 
 
@@ -76,10 +82,10 @@ def extract_email_data(main_folder, file_path, sub_folder=None):
             email_dict['email_date'] = email_date
             email_dict['email_from'] = email_from
             email_dict['email_to'] = merge_attr_and_x(email_to, email_x_to)
-            email_dict['email_subject'] = email_subject
+            email_dict['email_subject'] = clean_subject_body(email_subject)
             email_dict['email_cc'] = merge_attr_and_x(email_cc, email_x_cc)
             email_dict['email_bcc'] = merge_attr_and_x(email_bcc, email_x_bcc)
-            email_dict['email_body'] = email_body
+            email_dict['email_body'] = clean_subject_body(email_body)
             email_dict['main_folder'] = main_folder
             email_dict['sub_folder'] = sub_folder
             
