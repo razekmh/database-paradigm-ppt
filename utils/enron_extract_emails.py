@@ -1,9 +1,11 @@
 '''extract the emails and their attributes from the enron dataset'''
 
 # import modules
-import os
-from email import message_from_string
 import json
+import os
+import re
+from email import message_from_string
+
 
 def list_folders(parent_folder):
     # list the folders in the parent folder
@@ -17,10 +19,22 @@ def list_files(parent_folder):
 
 def clean_email_attr(email_attr):
     # clean the email attributes
-
-    cleaned_email = email_attr
+    # takes in a string of email attributes and resturns a list of cleaned email attributes
+    cleaned_email = re.findall(r'[\w.+-]+@[\w-]+\.[\w.-]+', email_attr)
     return cleaned_email
 
+def merge_attr_and_x(email_attr, email_attr_x):
+    # merge the email attributes and X-attributes
+    # takes in a string of email attributes and a string of X-attributes
+    # returns a list of merged email attributes
+    if email_attr is None:
+        return None
+    if email_attr_x is None:
+        return ', '.join(clean_email_attr(email_attr))
+    email_attr = clean_email_attr(email_attr)
+    email_attr_x = clean_email_attr(email_attr_x)
+    merged_email = [x for x in email_attr if not x.startswith('.')] + email_attr_x
+    return ' ,'.join(merged_email)
 
 def extract_email_data(main_folder, file_path, sub_folder=None):
     # extract the email data from the file
@@ -61,13 +75,10 @@ def extract_email_data(main_folder, file_path, sub_folder=None):
             email_dict['email_message_id'] = email_message_id
             email_dict['email_date'] = email_date
             email_dict['email_from'] = email_from
-            email_dict['email_to'] = email_to
+            email_dict['email_to'] = merge_attr_and_x(email_to, email_x_to)
             email_dict['email_subject'] = email_subject
-            email_dict['email_cc'] = email_cc
-            email_dict['email_bcc'] = email_bcc
-            email_dict['email_x_to'] = email_x_to
-            email_dict['email_x_cc'] = email_x_cc
-            email_dict['email_x_bcc'] = email_x_bcc
+            email_dict['email_cc'] = merge_attr_and_x(email_cc, email_x_cc)
+            email_dict['email_bcc'] = merge_attr_and_x(email_bcc, email_x_bcc)
             email_dict['email_body'] = email_body
             email_dict['main_folder'] = main_folder
             email_dict['sub_folder'] = sub_folder
