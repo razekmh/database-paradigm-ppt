@@ -6,7 +6,6 @@ import os
 import re
 from email import message_from_string
 
-
 def list_folders(parent_folder):
     # list the folders in the parent folder
     onlyfolder = [os.path.join(parent_folder, f) for f in os.listdir(parent_folder) if not os.path.isfile(os.path.join(parent_folder, f))]
