@@ -26,6 +26,7 @@ def clean_subject_body(email_attr):
     # clean the email attributes
     # takes in a string of email attributes and resturns a list of cleaned email attributes
     cleaned_email = re.sub('\t|\n|\r| +',' ', email_attr)
+    cleaned_email = re.sub('"','\'', cleaned_email)
     return cleaned_email
 
 def merge_attr_and_x(email_attr, email_attr_x):
