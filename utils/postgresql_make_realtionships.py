@@ -39,5 +39,11 @@ df_email_users['receiver'] = df_email_users['receiver'].fillna(0)
 # print head to check
 print(df_email_users.head())
 
+# strip whitespace from email_message_id
+df_email_users['email_message_id'] = df_email_users['email_message_id'].str.strip()
+
+# strip whitespace from type
+df_email_users['transaction_type'] = df_email_users['transaction_type'].str.strip()
+
 # export to csv with cast to int
 df_email_users.astype({"receiver": "int32"}).to_csv(os.path.join(enron_file, 'unique_email_users.csv'), index=False)
