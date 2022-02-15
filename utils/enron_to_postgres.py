@@ -31,15 +31,15 @@ line_no = 0
 
 # write the headers for the emails table
 with open(emails_table, 'w', encoding="utf-8") as outfile:
-    outfile.write('email_message_id, email_date, email_subject, email_body')
+    outfile.write('email_message_id,email_date,email_subject,email_body')
 
 # write the headers for the users table
 with open(users_table, 'w', encoding="utf-8") as outfile:
-    outfile.write('user_id, user_email, first_name, last_name')
+    outfile.write('user_id,user_email,first_name,last_name')
 
 # write the headers for the email_users table
 with open(email_users_table, 'w', encoding="utf-8") as outfile:
-    outfile.write('transaction_id, email_message_id, sender, receiver, transaction_type')
+    outfile.write('transaction_id,email_message_id,sender,receiver,transaction_type')
 
 # read the enron dataset
 with open(enron_file) as file:
