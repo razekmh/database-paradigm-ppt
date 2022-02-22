@@ -91,7 +91,7 @@ for line in lines:
         if len(recipient_list) > 0:
             for recipient in recipient_list:
                 transaction_no += 1
-                outfile.write(f'\n{transaction_no},{line_dict["email_message_id"]}, {line_dict["email_from"]}, {recipient[0]}, {recipient[1]}')
+                outfile.write(f'\n{transaction_no},{line_dict["email_message_id"]}, {line_dict["email_from"].strip().lower()}, {recipient[0].strip().lower()}, {recipient[1]}')
         else:
             transaction_no += 1
-            outfile.write(f'\n{transaction_no},{line_dict["email_message_id"]}, {line_dict["email_from"]}, {None}, {None}')
+            outfile.write(f'\n{transaction_no},{line_dict["email_message_id"]}, {line_dict["email_from"].strip().lower()}, {None}, {None}')
