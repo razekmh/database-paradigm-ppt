@@ -19,15 +19,16 @@ def list_files(parent_folder):
 def clean_email_attr(email_attr):
     # clean the email attributes
     # takes in a string of email attributes and resturns a list of cleaned email attributes
-    cleaned_email = re.findall(r'[\w.+-]+@[\w-]+\.[\w.-]+', email_attr)
-    return cleaned_email
+    cleaned_emails_list = re.findall(r'[\w.+-]+@[\w-]+\.[\w.-]+', email_attr)
+    stripped_emails_list = [x.strip().lower() for x in cleaned_emails_list]
+    return stripped_emails_list
 
 def clean_subject_body(email_attr):
     # clean the email attributes
     # takes in a string of email attributes and resturns a list of cleaned email attributes
     cleaned_email = re.sub('\t|\n|\r| +',' ', email_attr)
     cleaned_email = re.sub('"','\'', cleaned_email)
-    return cleaned_email
+    return cleaned_email.lower()
 
 def merge_attr_and_x(email_attr, email_attr_x):
     # merge the email attributes and X-attributes
@@ -36,11 +37,11 @@ def merge_attr_and_x(email_attr, email_attr_x):
     if email_attr is None:
         return None
     if email_attr_x is None:
-        return ', '.join(clean_email_attr(email_attr))
+        return ','.join(clean_email_attr(email_attr))
     email_attr = clean_email_attr(email_attr)
     email_attr_x = clean_email_attr(email_attr_x)
     merged_email = [x for x in email_attr if not x.startswith('.')] + email_attr_x
-    return ' ,'.join(merged_email)
+    return ','.join(merged_email)
 
 def extract_email_data(main_folder, file_path, sub_folder=None):
     # extract the email data from the file

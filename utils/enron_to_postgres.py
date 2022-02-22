@@ -29,6 +29,17 @@ user_no = 0
 # set line counter for debugging
 line_no = 0
 
+def extract_name_from_email(email):
+    if email is None:
+        return [None, None]
+    user_name = email.split('@')[0]
+    if '..' in user_name:
+        return [None, None]
+    elif '.' in user_name:
+        return [user_name.split('.')[0], user_name.split('.')[-1]]
+    else:
+        return [None, None]
+
 # write the headers for the emails table
 with open(emails_table, 'w', encoding="utf-8") as outfile:
     outfile.write('email_message_id,email_date,email_subject,email_body')
@@ -49,7 +60,8 @@ for line in lines:
 
     # increment line counter
     line_no += 1
-    print(f"Processing line: {line_no}")
+    if line_no % 10000 == 0:
+        print(f"Processing line: {line_no}")
 
     # set null to None
     null = None
@@ -66,32 +78,36 @@ for line in lines:
         recipient_list = []
         # write the sender data to the users table
         user_no += 1
-        outfile.write(f'\n{user_no}, {line_dict["email_from"]}, None, None')
+        first_name, last_name = extract_name_from_email(line_dict["email_from"])
+        outfile.write(f'\n{user_no},{line_dict["email_from"]},{first_name},{last_name}')
         # write the receiver data to the users table
         if line_dict["email_to"]:
             for user in line_dict["email_to"].split(','):
                 user_no += 1
-                outfile.write(f'\n{user_no}, {user}, None, None')
-                recipient_list.append((user, 'to'))
+                first_name, last_name = extract_name_from_email(user)
+                outfile.write(f'\n{user_no},{user},{first_name},{last_name}')
+                recipient_list.append((user,'to'))
         # write the cc data to the users table
         if line_dict["email_cc"]:
             for user in line_dict["email_cc"].split(','):
                 user_no += 1
-                outfile.write(f'\n{user_no}, {user}, None, None')
-                recipient_list.append((user, 'cc'))
+                first_name, last_name = extract_name_from_email(user)
+                outfile.write(f'\n{user_no},{user},{first_name},{last_name}')
+                recipient_list.append((user,'cc'))
         # write the bcc data to the users table
         if line_dict["email_bcc"]:
             for user in line_dict["email_bcc"].split(','):
                 user_no += 1
-                outfile.write(f'\n{user_no}, {user}, None, None')
-                recipient_list.append((user, 'bcc'))
+                first_name, last_name = extract_name_from_email(user)
+                outfile.write(f'\n{user_no},{user},{first_name},{last_name}')
+                recipient_list.append((user,'bcc'))
 
     # write the email_users data to the email_users table
     with open(email_users_table, 'a', encoding="utf-8") as outfile:
         if len(recipient_list) > 0:
             for recipient in recipient_list:
                 transaction_no += 1
-                outfile.write(f'\n{transaction_no},{line_dict["email_message_id"]}, {line_dict["email_from"].strip().lower()}, {recipient[0].strip().lower()}, {recipient[1]}')
+                outfile.write(f'\n{transaction_no},{line_dict["email_message_id"]},{line_dict["email_from"]},{recipient[0]},{recipient[1]}')
         else:
             transaction_no += 1
-            outfile.write(f'\n{transaction_no},{line_dict["email_message_id"]}, {line_dict["email_from"].strip().lower()}, {None}, {None}')
+            outfile.write(f'\n{transaction_no},{line_dict["email_message_id"]},{line_dict["email_from"]},{None},{None}')

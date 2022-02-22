@@ -37,7 +37,7 @@ df_email_users['receiver'] = df_email_users['receiver'].map(df_users.set_index('
 df_email_users['receiver'] = df_email_users['receiver'].fillna(0)
 
 # print head to check
-print(df_email_users.head())
+# print(df_email_users.head())
 
 # strip whitespace from email_message_id
 df_email_users['email_message_id'] = df_email_users['email_message_id'].str.strip()
