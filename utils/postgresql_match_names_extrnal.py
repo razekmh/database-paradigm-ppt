@@ -24,5 +24,17 @@ df_roles = pd.read_csv(names_path, sep='\t', header=None, names=['email', 'name'
 df_users = pd.read_csv(users_path, sep=',', header=0)
 df_users['email_stem'] = df_users['user_email'].str.lower().str.replace(r'@.*', '').str.strip()
 
+# merge the two dataframes
 df = pd.merge(df_users, df_roles, left_on='email_stem', right_on='email', how='left')
-df.to_csv(output_path, sep=',', index=False)
+
+# modify the name columns based on the new name column
+def get_name(row):
+    if row['first_name'] == 'None' and row['last_name'] == 'None' and row['name'] is not pd.np.nan and len(row['name'].split()) > 1:
+        row['first_name'] = row['name'].split(' ')[0].strip().lower()
+        row['last_name'] = row['name'].split(' ')[1].strip().lower()
+    return row
+
+# apply the function to the dataframe
+df = df.apply(get_name, axis=1)
+
+df.to_csv(output_path, columns= ["user_id","user_email","first_name","last_name","rank","role"],sep=',', index=False)
