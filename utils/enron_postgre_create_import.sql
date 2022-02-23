@@ -18,11 +18,11 @@ user_email VARCHAR (250),
 first_name VARCHAR (250),
 last_name VARCHAR (250),
 rank VARCHAR (250),
-role VARCHAR (250),
+role VARCHAR (250)
 );
 
-INSERT INTO users (user_id, user_email, first_name, last_name)
-VALUES('0','Unknown',NULL, NULL);
+INSERT INTO users (user_id, user_email, first_name, last_name, rank, role)
+VALUES('0','Unknown',NULL, NULL, NULL, NULL);
 
 COPY users FROM '/opt/data/unique_users_with_names.csv' DELIMITER ',' CSV HEADER;
 
