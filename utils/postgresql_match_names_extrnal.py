@@ -17,7 +17,6 @@ users_path = pathlib.PurePath(path,'data/enron_postgres/unique_users.csv')
 # set the output paths
 output_path = pathlib.PurePath(path,'data/enron_postgres/unique_users_with_names.csv')
 
-
 # read in roles file
 df_roles = pd.read_csv(names_path, sep='\t', header=None, names=['email', 'name', 'rank', 'role'], index_col='email')
 

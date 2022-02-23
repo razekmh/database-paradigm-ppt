@@ -29,9 +29,20 @@ print(df_email_users.duplicated(subset=['sender', 'receiver', 'email_message_id'
 # drop duplicates
 df_email_users = df_email_users.drop_duplicates(subset=['sender', 'receiver', 'email_message_id'])
 
+# add external or internal flag
+for index, row in df_email_users.iterrows():
+    # print(row)
+    if row['sender'] == 'None' or row['receiver'] == 'None' or '@' not in row['sender'] or '@' not in row['receiver']:
+        df_email_users.at[index, 'external_or_internal'] = 'unknown'
+    elif row['sender'].split('@')[1] != 'enron.com' or row['receiver'].split('@')[1] != 'enron.com':
+        df_email_users.at[index, 'external_or_internal'] = 'external'
+    else:
+        df_email_users.at[index, 'external_or_internal'] = 'internal'
+
 # replace sender form email_users table with user_id from users table
 df_email_users['sender'] = df_email_users['sender'].map(df_users.set_index('user_email')['user_id'])
 df_email_users['receiver'] = df_email_users['receiver'].map(df_users.set_index('user_email')['user_id'])
+
 
 # fill null values with 0
 df_email_users['receiver'] = df_email_users['receiver'].fillna(0)
