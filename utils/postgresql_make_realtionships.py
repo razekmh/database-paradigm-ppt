@@ -12,11 +12,6 @@ users_table = os.path.join(enron_file, 'unique_users.csv')
 df_users = pd.read_csv(users_table, encoding="utf-8")
 print("read users table")
 
-# # read emails table
-# emails_table = os.path.join(enron_file, 'emails.csv')
-# df_emails = pd.read_csv(emails_table, encoding="utf-8")
-# print("read emails table")
-
 # read email_users table
 email_users_table = os.path.join(enron_file, 'email_users.csv')
 df_email_users = pd.read_csv(email_users_table, encoding="utf-8")
@@ -30,14 +25,16 @@ print(df_email_users.duplicated(subset=['sender', 'receiver', 'email_message_id'
 df_email_users = df_email_users.drop_duplicates(subset=['sender', 'receiver', 'email_message_id'])
 
 # add external or internal flag
-for index, row in df_email_users.iterrows():
-    # print(row)
+def is_external(row):
     if row['sender'] == 'None' or row['receiver'] == 'None' or '@' not in row['sender'] or '@' not in row['receiver']:
-        df_email_users.at[index, 'external_or_internal'] = 'unknown'
+        return 'unknown'
     elif row['sender'].split('@')[1] != 'enron.com' or row['receiver'].split('@')[1] != 'enron.com':
-        df_email_users.at[index, 'external_or_internal'] = 'external'
+        return 'external'
     else:
-        df_email_users.at[index, 'external_or_internal'] = 'internal'
+        return 'internal'
+
+# add external or internal flag
+df_email_users['external_or_internal'] = df_email_users.apply(is_external, axis=1)
 
 # replace sender form email_users table with user_id from users table
 df_email_users['sender'] = df_email_users['sender'].map(df_users.set_index('user_email')['user_id'])
