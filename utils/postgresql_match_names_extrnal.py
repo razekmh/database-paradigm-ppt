@@ -34,7 +34,16 @@ def get_name(row):
         row['last_name'] = row['name'].split(' ')[1].strip().lower()
     return row
 
-# apply the function to the dataframe
-df = df.apply(get_name, axis=1)
+# get the company email domain
+def get_company(row):
+    try:
+        row['company'] = ('.').join(row['user_email'].split('@')[1].strip().lower().split('.')[0:-1])
+    except IndexError:
+        print(row['user_email'])
+    return row
 
-df.to_csv(output_path, columns= ["user_id","user_email","first_name","last_name","rank","role"],sep=',', index=False)
+# apply the enriching functions to the dataframe
+df = df.apply(get_name, axis=1)
+df = df.apply(get_company, axis=1)
+
+df.to_csv(output_path, columns= ["user_id","user_email","first_name","last_name","rank","role","company"],sep=',', index=False)
