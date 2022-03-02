@@ -50,4 +50,4 @@ with open (enron_neo4j_path / 'users_emails.txt', 'a') as emails_file:
     for index, row in df_relationships.iterrows():
         sender_id = "user_" + str(row['sender']).zfill(6)
         receiver_id = "user_" + str(row['receiver']).zfill(6)
-        emails_file.write(f"CREATE ({sender_id})-[:SENT_TO{{message_id:'{row['email_message_id']}', subject:'{row['email_subject']}', date:'{row['email_date']}'}}]->({receiver_id});\n")
+        emails_file.write(f"CREATE ({sender_id})-[:SENT_TO{{message_id:'{row['email_message_id']}', subject:'{row['email_subject']}', date:'{row['email_date']}', type: '{row['transaction_type']}', routing: '{row['external_or_internal']}'}}]->({receiver_id});\n")
