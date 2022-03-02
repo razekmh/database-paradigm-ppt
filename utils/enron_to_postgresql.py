@@ -42,7 +42,7 @@ def extract_name_from_email(email):
 
 # write the headers for the emails table
 with open(emails_table, 'w', encoding="utf-8") as outfile:
-    outfile.write('email_message_id,email_date,email_subject,email_body')
+    outfile.write('"email_message_id","email_date","email_subject","email_body"')
 
 # write the headers for the users table
 with open(users_table, 'w', encoding="utf-8") as outfile:
@@ -71,7 +71,7 @@ for line in lines:
 
     # write the email data to the emails table
     with open(emails_table, 'a', encoding="utf-8") as outfile:
-        outfile.write(f'\n{line_dict["email_message_id"]}, "{parser.parse(line_dict["email_date"]).strftime("%Y-%m-%d %H:%M:%S %Z")}", "{line_dict["email_subject"]}", "{line_dict["email_body"]}"')
+        outfile.write(f'\n"{line_dict["email_message_id"]}","{parser.parse(line_dict["email_date"]).strftime("%Y-%m-%d %H:%M:%S %Z")}","{line_dict["email_subject"]}","{line_dict["email_body"]}"')
     
     # write the user data to the users table
     with open(users_table, 'a', encoding="utf-8") as outfile:

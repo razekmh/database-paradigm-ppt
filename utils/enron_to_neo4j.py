@@ -18,14 +18,14 @@ enron_neo4j_path = pathlib.Path(path, pathlib.Path('data/enron_neo4j'))
 # read users csv
 df_users = pd.read_csv(enron_pg_path / 'unique_users_with_names.csv')
 
-# # read emails csv
-# df_emails = pd.read_csv(enron_pg_path / 'emails.csv', usecols=['email_message_id','email_date','email_subject'])
+# read emails csv
+df_emails = pd.read_csv(enron_pg_path / 'emails.csv', usecols=['email_message_id', 'email_date', 'email_subject'])
 
-# # read transactions csv
-# df_transactions = pd.read_csv(enron_pg_path / 'unique_email_users.csv')
+# read transactions csv
+df_transactions = pd.read_csv(enron_pg_path / 'unique_email_users.csv')
 
 # create user nodes
-with open (enron_neo4j_path / 'users.txt', 'w') as users_file:
+with open (enron_neo4j_path / 'users_emails.txt', 'w') as users_file:
     users_file.write("CREATE (user_000000:Person);" + '\n')
     for index, row in df_users.iterrows():
         user_id = "user_" + str(row['user_id']).zfill(6)
@@ -43,17 +43,11 @@ with open (enron_neo4j_path / 'users.txt', 'w') as users_file:
             users_file.write(f", company:'{row['company'].lower()}'")
         users_file.write("});\n")
 
-# # create email relationships
-# df_relationships = pd.merge(df_transactions, df_emails, on='email_message_id', how='left')
+# create email relationships
+df_relationships = pd.merge(df_transactions, df_emails, on='email_message_id', how='left')
 
-# with open (enron_neo4j_path / 'emails.txt', 'w') as emails_file:
-#     for index, row in df_relationships.iterrows():
-#         sender_id = "user_" + str(row['sender']).zfill(6)
-#         receiver_id = "user_" + str(row['receiver']).zfill(6)
-#         email_id = "email_" + str(row['email_message_id'])
-#         emails_file.write(f"MATCH (sender:Person {{email_address:'{row['user_email']}'}}), (receiver:Person {{message_id:'{row['email_message_id']}'}})\n")
-#         emails_file.write(f"MERGE (user)-[:SENT_EMAIL]->(email)\n")
-#         emails_file.write(f"SET email.date='{row['email_date']}', email.subject='{row['email_subject']}'\n")
-#         emails_file.write("RETURN user, email;\n")
-
-#         #transaction_id,email_message_id,sender,receiver,transaction_type,external_or_internal
+with open (enron_neo4j_path / 'users_emails.txt', 'a') as emails_file:
+    for index, row in df_relationships.iterrows():
+        sender_id = "user_" + str(row['sender']).zfill(6)
+        receiver_id = "user_" + str(row['receiver']).zfill(6)
+        emails_file.write(f"CREATE ({sender_id})-[:SENT_TO{{message_id:'{row['email_message_id']}', subject:'{row['email_subject']}', date:'{row['email_date']}'}}]->({receiver_id});\n")
