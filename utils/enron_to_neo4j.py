@@ -24,48 +24,48 @@ df_emails = pd.read_csv(enron_pg_path / 'emails.csv', usecols=['email_message_id
 # read transactions csv
 df_transactions = pd.read_csv(enron_pg_path / 'unique_email_users.csv')
 
-# create user nodes
-with open (enron_neo4j_path / 'nodes.txt', 'w') as users_file:
-    users_file.write("CREATE (user_000000:Person);" + '\n')
-    for index, row in df_users.iterrows():
-        # clean email address
-        user_email = row['user_email'].replace("'", "")
-        # standardize user id
-        user_id = "user_" + str(row['user_id']).zfill(6)
-        # write user node
-        users_file.write(f"CREATE ({user_id}:Person {{email_address:'{user_email}'")
-        users_file.write(f",user_id:'{user_id}'")
-        if row['first_name'] != 'None' and not pd.isna(row['first_name']):
-            # clean first name
-            user_first_name = row['first_name'].replace("'", "")
-            users_file.write(f", first_name:'{user_first_name}'")
-        if row['last_name'] != 'None' and not pd.isna(row['last_name']):
-            # clean last name
-            user_last_name = row['last_name'].replace("'", "")
-            users_file.write(f", last_name:'{user_last_name}'")
-        if not pd.isna(row['rank']):
-            users_file.write(f", rank:'{row['rank'].lower()}'")
-        if not pd.isna(row['role']):
-            users_file.write(f", role:'{row['role'].lower()}'")
-        if not pd.isna(row['company']):
-            users_file.write(f", company:'{row['company'].lower()}'")
-        users_file.write("});\n")
+# # create user nodes
+# with open (enron_neo4j_path / 'nodes.txt', 'w') as users_file:
+#     users_file.write("CREATE (user_000000:Person);" + '\n')
+#     for index, row in df_users.iterrows():
+#         # clean email address
+#         user_email = row['user_email'].replace("'", "")
+#         # standardize user id
+#         user_id = "user_" + str(row['user_id']).zfill(6)
+#         # write user node
+#         users_file.write(f"CREATE ({user_id}:Person {{email_address:'{user_email}'")
+#         users_file.write(f",user_id:'{user_id}'")
+#         if row['first_name'] != 'None' and not pd.isna(row['first_name']):
+#             # clean first name
+#             user_first_name = row['first_name'].replace("'", "")
+#             users_file.write(f", first_name:'{user_first_name}'")
+#         if row['last_name'] != 'None' and not pd.isna(row['last_name']):
+#             # clean last name
+#             user_last_name = row['last_name'].replace("'", "")
+#             users_file.write(f", last_name:'{user_last_name}'")
+#         if not pd.isna(row['rank']):
+#             users_file.write(f", rank:'{row['rank'].lower()}'")
+#         if not pd.isna(row['role']):
+#             users_file.write(f", role:'{row['role'].lower()}'")
+#         if not pd.isna(row['company']):
+#             users_file.write(f", company:'{row['company'].lower()}'")
+#         users_file.write("});\n")
 
-# # # create email relationships
-# df_relationships = pd.merge(df_transactions, df_emails, on='email_message_id', how='left')
+# # create email relationships
+df_relationships = pd.merge(df_transactions, df_emails, on='email_message_id', how='left')
 
-# with open (enron_neo4j_path / 'relationships.txt', 'w') as emails_file:
-#     for index, row in df_relationships.iterrows():
-#         sender_id = "user_" + str(row['sender']).zfill(6)
-#         receiver_id = "user_" + str(row['receiver']).zfill(6)
-#         emails_file.write(f"MATCH (sender:Person {{user_id:'{sender_id}'}}), (receiver:Person {{user_id:'{receiver_id}'}})")
-#         emails_file.write(f"CREATE (sender)-[:SENT_EMAIL {{date:'{row['email_date']}'")
-#         emails_file.write(f",subject:'{row['email_subject']}'")
-#         emails_file.write(f",message_id:'{row['email_message_id']}'")
-#         emails_file.write(f",type: '{row['transaction_type']}'")
-#         emails_file.write(f",routing: '{row['external_or_internal']}'")
-#         emails_file.write("}]->(receiver)")
-#         emails_file.write(";\n")
+with open (enron_neo4j_path / 'relationships.txt', 'w') as emails_file:
+    for index, row in df_relationships.iterrows():
+        sender_id = "user_" + str(row['sender']).zfill(6)
+        receiver_id = "user_" + str(row['receiver']).zfill(6)
+        emails_file.write(f"MATCH (sender:Person {{user_id:'{sender_id}'}}), (receiver:Person {{user_id:'{receiver_id}'}})")
+        emails_file.write(f"CREATE (sender)-[:SENT_EMAIL {{date:'{row['email_date']}'")
+        emails_file.write(f",subject:'{row['email_subject']}'")
+        emails_file.write(f",message_id:'{row['email_message_id']}'")
+        emails_file.write(f",type: '{row['transaction_type']}'")
+        emails_file.write(f",routing: '{row['external_or_internal']}'")
+        emails_file.write("}]->(receiver)")
+        emails_file.write(";\n")
 
 
 
