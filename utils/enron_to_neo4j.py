@@ -35,11 +35,11 @@ with open (enron_neo4j_path / 'nodes.txt', 'w') as users_file:
         # write user node
         users_file.write(f"CREATE ({user_id}:Person {{email_address:'{user_email}'")
         users_file.write(f",user_id:'{user_id}'")
-        if row['first_name'] != 'None':
+        if row['first_name'] != 'None' and not pd.isna(row['first_name']):
             # clean first name
             user_first_name = row['first_name'].replace("'", "")
             users_file.write(f", first_name:'{user_first_name}'")
-        if row['last_name'] != 'None':
+        if row['last_name'] != 'None' and not pd.isna(row['last_name']):
             # clean last name
             user_last_name = row['last_name'].replace("'", "")
             users_file.write(f", last_name:'{user_last_name}'")
