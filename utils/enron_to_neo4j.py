@@ -59,8 +59,11 @@ with open (enron_neo4j_path / 'relationships.txt', 'w') as emails_file:
         sender_id = "user_" + str(row['sender']).zfill(6)
         receiver_id = "user_" + str(row['receiver']).zfill(6)
         emails_file.write(f"MATCH (sender:Person {{user_id:'{sender_id}'}}), (receiver:Person {{user_id:'{receiver_id}'}})")
-        emails_file.write(f"CREATE (sender)-[:SENT_EMAIL {{date:'{row['email_date']}'")
-        emails_file.write(f",subject:'{row['email_subject']}'")
+        emails_file.write(f"MERGE (sender)-[:SENT_EMAIL {{date:'{row['email_date']}'")
+        if not pd.isna(row['email_subject']):
+            email_subject = row['email_subject'].replace("'", "")
+            email_subject = row['email_subject'].replace(":", " ")
+            emails_file.write(f",subject:'{email_subject}'")
         emails_file.write(f",message_id:'{row['email_message_id']}'")
         emails_file.write(f",type: '{row['transaction_type']}'")
         emails_file.write(f",routing: '{row['external_or_internal']}'")
