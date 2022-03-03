@@ -30,13 +30,19 @@ with open (enron_neo4j_path / 'nodes.txt', 'w') as users_file:
     for index, row in df_users.iterrows():
         # clean email address
         user_email = row['user_email'].replace("'", "")
+        # clean first name
+        user_first_name = row['first_name'].replace("'", "")
+        # clean last name
+        user_last_name = row['last_name'].replace("'", "")
+        # standardize user id
         user_id = "user_" + str(row['user_id']).zfill(6)
+        # write user node
         users_file.write(f"CREATE ({user_id}:Person {{email_address:'{user_email}'")
         users_file.write(f",user_id:'{user_id}'")
         if row['first_name'] != 'None':
-            users_file.write(f", first_name:'{row['first_name']}'")
+            users_file.write(f", first_name:'{user_first_name}'")
         if row['last_name'] != 'None':
-            users_file.write(f", last_name:'{row['last_name']}'")
+            users_file.write(f", last_name:'{user_last_name}'")
         if not pd.isna(row['rank']):
             users_file.write(f", rank:'{row['rank'].lower()}'")
         if not pd.isna(row['role']):
