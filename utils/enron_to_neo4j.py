@@ -41,7 +41,7 @@ with open (enron_neo4j_path / 'users_emails.txt', 'w') as users_file:
             users_file.write(f", role:'{row['role'].lower()}'")
         if not pd.isna(row['company']):
             users_file.write(f", company:'{row['company'].lower()}'")
-        users_file.write("});\n")
+        users_file.write("})\n")
 
 # create email relationships
 df_relationships = pd.merge(df_transactions, df_emails, on='email_message_id', how='left')
@@ -50,4 +50,5 @@ with open (enron_neo4j_path / 'users_emails.txt', 'a') as emails_file:
     for index, row in df_relationships.iterrows():
         sender_id = "user_" + str(row['sender']).zfill(6)
         receiver_id = "user_" + str(row['receiver']).zfill(6)
-        emails_file.write(f"CREATE ({sender_id})-[:SENT_TO{{message_id:'{row['email_message_id']}', subject:'{row['email_subject']}', date:'{row['email_date']}', type: '{row['transaction_type']}', routing: '{row['external_or_internal']}'}}]->({receiver_id});\n")
+        emails_file.write(f"CREATE ({sender_id})-[:SENT_TO{{message_id:'{row['email_message_id']}', subject:'{row['email_subject']}', date:'{row['email_date']}', type: '{row['transaction_type']}', routing: '{row['external_or_internal']}'}}]->({receiver_id})\n")
+    emails_file.write(";")
