@@ -63,10 +63,10 @@ with open (enron_neo4j_path / 'relationships.txt', 'w') as emails_file:
         if not pd.isna(row['email_subject']):
             email_subject = row['email_subject'].replace("'", "")
             email_subject = row['email_subject'].replace(":", " ")
-            emails_file.write(f",subject:'{email_subject}'")
-        emails_file.write(f",message_id:'{row['email_message_id']}'")
-        emails_file.write(f",type: '{row['transaction_type']}'")
-        emails_file.write(f",routing: '{row['external_or_internal']}'")
+            emails_file.write(f", subject:'{email_subject}'")
+        emails_file.write(f", message_id:'{row['email_message_id']}'")
+        emails_file.write(f", type: '{row['transaction_type']}'")
+        emails_file.write(f", routing: '{row['external_or_internal']}'")
         emails_file.write("}]->(receiver)")
         emails_file.write(";\n")
 
