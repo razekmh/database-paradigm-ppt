@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="ER-diagram.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.90645191"
+     inkscape:cx="468.86106"
+     inkscape:cy="615.58699"
+     inkscape:window-width="1920"
+     inkscape:window-height="947"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#add8e6;fill-opacity:1;stroke:#ffffff;stroke-width:0.981117;stroke-opacity:1"
+       id="rect846"
+       width="46.345108"
+       height="28.551283"
+       x="7.4787393"
+       y="134.22437"
+       inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <rect
+       style="opacity:1;fill:#add8e6;fill-opacity:1;stroke:#ffffff;stroke-width:0.962963;stroke-opacity:1"
+       id="rect928"
+       width="46.376328"
+       height="27.485735"
+       x="153.01936"
+       y="134.75713"
+       inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#90ee90;fill-opacity:1;stroke:#ffffff;stroke-width:7.60604;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1086"
+       inkscape:flatsided="true"
+       sodipodi:sides="4"
+       sodipodi:cx="256.46848"
+       sodipodi:cy="82.301331"
+       sodipodi:r1="144.20164"
+       sodipodi:r2="101.96596"
+       sodipodi:arg1="0"
+       sodipodi:arg2="0.78539816"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 400.67012,82.301331 256.46848,226.50298 112.26683,82.301331 256.46848,-61.900314 Z"
+       transform="matrix(0.19506367,0,0,0.09436073,53.401725,140.73399)"
+       inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:1.1649;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 76.152862,148.5 H 53.561102"
+       id="path3927"
+       inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:1.14875;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 131.29877,148.5 h 21.81035"
+       id="path3929"
+       inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.0518px;line-height:1.25;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+       x="11.81898"
+       y="152.4357"
+       id="text13903"
+       inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         sodipodi:role="line"
+         id="tspan13901"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.0518px;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="11.81898"
+         y="152.4357">User</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.0518px;line-height:1.25;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+       x="154.91254"
+       y="152.69614"
+       id="text13903-1"
+       inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         sodipodi:role="line"
+         id="tspan13901-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.0518px;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="154.91254"
+         y="152.69614">Email</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;line-height:1.25;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+       x="84.40123"
+       y="151.65021"
+       id="text13903-1-5"
+       inkscape:transform-center-x="-85.347713"
+       inkscape:transform-center-y="-1.6783015"
+       inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         sodipodi:role="line"
+         id="tspan13901-1-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="84.40123"
+         y="151.65021">sends</tspan></text>
+  </g>
+</svg>
