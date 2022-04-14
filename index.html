@@ -129,16 +129,16 @@ investor
 					<li>Who will <span style="color:lightgreen;font-weight:bold">interact</span> with your data ?</br>	- multiple researchers</li>
 			</section>
 			<section>
-				<h4>We have to address the elephant in the room</h4>
-				<img data-src="img/Postgresql_elephant.png" width="35%" height="35%">
-				<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">PostgreSQL</span> is an open source Database Management System</span></p>
-			</section>
-			<section>
 				<h3>Data Modeling &</br> Data Engineering</h3>
 				<p style="text-align: left">Before importing your data to the database we need to <span style="color:lightgreen;font-weight:bold">engineer</span> it to match the <span style="color:lightgreen;font-weight:bold">model</span> of the databses management system.</p>
 				<ul style="text-align: left">
 					<li><span style="color:lightblue;font-weight:bold">Data Model:</span> is an abstract model that organizes elements of data and standardizes how they relate to one another and to the properties of real-world entities. <span style="font-size:40%;font-style: italic"><a href="https://en.wikipedia.org/wiki/Data_model">Wiki</a></span></li>
 					<li><span style="color:lightblue;font-weight:bold">Data Engineering:</span> is the practice designing and building systems for collecting, storing, and analyzing data at scale. <span style="font-size:40%;font-style:italic"><a href="https://www.coursera.org/articles/what-does-a-data-engineer-do-and-how-do-i-become-one">coursera</a></span></li>
+			</section>
+			<section>
+				<h4>We have to address the elephant in the room</h4>
+				<img data-src="img/Postgresql_elephant.png" width="35%" height="35%">
+				<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">PostgreSQL</span> is an open source Database Management System</span></p>
 			</section>
 			<section>
 				<h3>Entity Relationship Model</h3>
@@ -152,6 +152,39 @@ investor
 				<img data-src="img/enro_er_diagram.png" width="100%" height="100%">
 				<p>Can you think of a different way to represent the data?</p>
 			</section>
+			<section data-auto-animate>
+				<h4>Let's check the data</h4>
+				<img data-src="img/users_table.png" width="100%" height="100%">
+				<p>Users table</p>
+			</section>
+			<section data-auto-animate>
+				<h4>Let's check the data</h4>
+				<img data-src="img/email_transactions_table.png" width="100%" height="100%">
+				<p>Email transactions table</p>
+			</section>
+			<section data-auto-animate>
+				<h4>Let's check the data</h4>
+				<img data-src="img/email_table.png" width="100%" height="100%">
+				<p>Emails table</p>
+			</section>
+			<section data-auto-animate>
+				<h4> 📢</h4>
+				<pre>
+					<code data-line-numbers="1|2">
+						<script type="text/template">SELECT a.emails_count,
+       b.*
+FROM   (SELECT receiver,
+               Count(*) AS emails_count
+        FROM   eamil_transactions
+        GROUP  BY receiver) a
+       	INNER JOIN users b
+               ON a.receiver = b.user_id
+ORDER  BY a.emails_count DESC;  
+						</script>
+					</code>
+				</pre>
+			</section>
+
 
 			<section data-auto-animate>	
 				<pre data-id="code-animation">
