@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/sign.css">
-
+	<link rel="stylesheet" href="plugin/copycode/copycode.css">
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
 </head>
@@ -53,9 +53,9 @@
 			</section>
 			<section>
 				<h3>The dataset</h3>
-				<img class="fragment fade-up" data-transition-speed="slow" data-src="img/enron_logo.png" width="30%" height="30%">
-				<p style="font-size:80%">In this course we will use <span style="color:lightpink;font-weight:bold">Enron's emails dataset</span>. The dataset is a collection of emails from Enron's employees.</p>
-				<p style="font-size:80%">The dataset and more information about are available on <a href="https://www.cs.cmu.edu/~enron/">CMU</a>.</p>
+				<img class="fragment fade-up" data-src="img/enron_logo.png" width="30%" height="30%">
+				<p class="fragment" style="font-size:80%">In this course we will use <span style="color:lightgreen;font-weight:bold">Enron's emails dataset</span>. The dataset is a collection of emails from Enron's employees.</p>
+				<p class="fragment" style="font-size:80%">The dataset and more information about are available on <a href="https://www.cs.cmu.edu/~enron/">CMU</a>.</p>
 
 			</section>
 			<section>
@@ -153,24 +153,27 @@ investor
 				<img data-src="img/enro_er_diagram.png" width="100%" height="100%">
 				<p>Can you think of a different way to represent the data?</p>
 			</section>
-			<section data-auto-animate>
+			<section data-transition="slide" data-auto-animate>
 				<h4>Let's check the data</h4>
 				<img data-src="img/users_table.png" width="100%" height="100%">
 				<p>Users table</p>
 			</section>
-			<section data-auto-animate>
+			<section data-transition="slide" data-auto-animate>
 				<h4>Let's check the data</h4>
 				<img data-src="img/email_transactions_table.png" width="100%" height="100%">
 				<p>Email transactions table</p>
 			</section>
-			<section data-auto-animate>
+			<section data-transition="slide" data-auto-animate>
 				<h4>Let's check the data</h4>
 				<img data-src="img/email_table.png" width="100%" height="100%">
 				<p>Emails table</p>
 			</section>
+			<section>
+				<iframe data-src="http://170.187.154.119:5050" data-preload></iframe>
+			</section>
 			<section data-auto-animate>
 				<h4> 📢</h4>
-				<pre>
+				<pre data-cc="true">
 					<code data-line-numbers="1|2">
 						<script type="text/template">SELECT a.emails_count,
        b.*
@@ -252,6 +255,9 @@ ORDER  BY a.emails_count DESC;
 	<script src="plugin/notes/notes.js"></script>
 	<script src="plugin/markdown/markdown.js"></script>
 	<script src="plugin/highlight/highlight.js"></script>
+	<script src="dist/reveal.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+	<script src="plugin/copycode/copycode.js"></script>
 	<script>
 		// More info about initialization & config:
 		// - https://revealjs.com/initialization/
@@ -261,7 +267,7 @@ ORDER  BY a.emails_count DESC;
 			slideNumber:"h/v",
 
 			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, CopyCode]
 		});
 	</script>
 </body>
