@@ -56,11 +56,12 @@ Hakim's open source work is supported by <a href="https://github.com/sponsors/ha
 
 ### Online Editor
 Want to create your presentation using a visual editor? Try the official reveal.js presentation platform for free at [Slides.com](https://slides.com). It's made by the same people behind reveal.js.
-https://razekmh.github.io/database-paradigm-ppt/
 <br>
 <br>
 
 --- 
+https://razekmh.github.io/database-paradigm-ppt/
+---
 <div align="center">
   MIT licensed | Copyright © 2011-2022 Hakim El Hattab, https://hakim.se
 </div>
