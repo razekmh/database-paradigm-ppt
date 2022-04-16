@@ -176,7 +176,7 @@ investor
        b.*
 FROM   (SELECT receiver,
                Count(*) AS emails_count
-        FROM   eamil_transactions
+        FROM   email_transactions
         GROUP  BY receiver) a
        	INNER JOIN users b
                ON a.receiver = b.user_id
@@ -194,6 +194,31 @@ FROM emails
 group by 1
 ORDER BY Transactions DESC;
 						</script>
+					</code>
+				</pre>
+			</section>
+			<section data-auto-animate>
+				<h4>Find who was cc'd/to'd in emails the most📢</h4>
+				<pre>
+					<code data-line-numbers="1|2">
+						<script type="text/template">SELECT *
+FROM
+  (SELECT c.to_receiver AS receiver,
+          c.to_emails_count/c.cc_emails_count AS to_cc_ratio
+   FROM (
+           (SELECT receiver AS to_receiver,
+                   Count(*) AS to_emails_count
+            FROM eamil_transactions
+            WHERE transaction_type LIKE 'to'
+            GROUP BY to_receiver) AS a
+         INNER JOIN
+           (SELECT receiver AS cc_receiver,
+                   Count(*) AS cc_emails_count
+            FROM eamil_transactions
+            WHERE transaction_type LIKE 'cc'
+            GROUP BY cc_receiver) AS b ON a.to_receiver = b.cc_receiver) AS c) AS d
+INNER JOIN users e ON d.receiver = e.user_id
+ORDER BY d.to_cc_ratio;						</script>
 					</code>
 				</pre>
 			</section>
