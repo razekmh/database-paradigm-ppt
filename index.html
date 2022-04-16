@@ -54,7 +54,7 @@
 			<section>
 				<h3>The dataset</h3>
 				<img class="fragment fade-up" data-transition-speed="slow" data-src="img/enron_logo.png" width="30%" height="30%">
-				<p style="font-size:80%">In this course we will use <span style="color:lightpink;font-weight:bold">Enron's emails dataset</span>. The dataset is a collection of emails from Enron's employees.</p>
+				<p style="font-size:80%">In this course we will use <span style="color:lightgreen;font-weight:bold">Enron's emails dataset</span>. The dataset is a collection of emails from Enron's employees.</p>
 				<p style="font-size:80%">The dataset and more information about are available on <a href="https://www.cs.cmu.edu/~enron/">CMU</a>.</p>
 
 			</section>
@@ -169,7 +169,7 @@ investor
 				<p>Emails table</p>
 			</section>
 			<section data-auto-animate>
-				<h4> 📢</h4>
+				<h4>Find who recieved the most emails 📢</h4>
 				<pre>
 					<code data-line-numbers="1|2">
 						<script type="text/template">SELECT a.emails_count,
@@ -181,6 +181,18 @@ FROM   (SELECT receiver,
        	INNER JOIN users b
                ON a.receiver = b.user_id
 ORDER  BY a.emails_count DESC;  
+						</script>
+					</code>
+				</pre>
+			</section>
+			<section data-auto-animate>
+				<h4>Find the most active day📢</h4>
+				<pre>
+					<code data-line-numbers="1|2">
+						<script type="text/template">SELECT emails.email_date::date  "Day", count(*) Transactions
+FROM emails
+group by 1
+ORDER BY Transactions DESC;
 						</script>
 					</code>
 				</pre>
