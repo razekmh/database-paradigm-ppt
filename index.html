@@ -222,6 +222,56 @@ ORDER BY d.to_cc_ratio;						</script>
 					</code>
 				</pre>
 			</section>
+			<section data-auto-animate>
+				<h4>Find who sends the most emails and receives the least📢</h4>
+				<pre>
+					<code data-line-numbers="1|2">
+						<script type="text/template">SELECT *
+FROM
+  (SELECT c.sender AS person_id,
+          c.send_count/c.receive_count AS send_receive_ratio,
+          c.send_count,
+          c.receive_count
+   FROM (
+           (SELECT sender,
+                   Count(*) AS send_count
+            FROM eamil_transactions
+            GROUP BY sender) AS a
+         INNER JOIN
+           (SELECT receiver,
+                   Count(*) AS receive_count
+            FROM eamil_transactions
+            GROUP BY receiver) AS b ON a.sender = b.receiver
+         AND a.send_count > 10
+         AND b.receive_count > 10) AS c) AS d
+INNER JOIN users e ON d.person_id = e.user_id
+ORDER BY d.send_receive_ratio DESC;
+						</script>
+					</code>
+				</pre>
+			</section>
+			<section data-auto-animate>
+				<h4>Find who sent emails about LJM the most📢</h4>
+				<pre>
+					<code data-line-numbers="1|2">
+						<script type="text/template">SELECT *
+FROM
+  (SELECT c.sender,
+          COUNT(*) AS "email_count"
+   FROM
+     (SELECT *
+      FROM
+        (SELECT email_message_id
+         FROM emails
+         WHERE email_body ~ ' *ljm\d* *') AS a
+      INNER JOIN eamil_transactions b ON a.email_message_id = b.email_message_id) AS c
+   GROUP BY c.sender) AS d
+INNER JOIN users e ON d.sender = e.user_id
+ORDER BY d.email_count DESC;
+						</script>
+					</code>
+				</pre>
+			</section>
 
 
 			<section data-auto-animate>	
