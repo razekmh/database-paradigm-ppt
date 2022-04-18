@@ -45,17 +45,16 @@
 			</section>
 			<section>
 				<h3>About this course</h3>
-				<p style="text-align: left;font-size:80%">In this course we will try to answer the folwloing questions:</p>
-				<ul style="text-align: left;font-size:70%">
-					<li>What is a database? And when do you need to use it?</li>
-					<li>What are the different types of database systems? And how to choose among them?</li>
-					<li></li>
+				<ul style="text-align: left;font-size:90%">
+					<li>What is a <span style="color:lightgreen;font-weight:bold">database</span>? And when do you need to use it?</li>
+					<li>What are the <span style="color:lightblue;font-weight:bold">different types</span> of database systems? And how to choose among them?</li>
+					<li>How to think about your data using <span style="color:lightgreen;font-weight:bold">database models</span>?</li>
 			</section>
 			<section>
 				<h3>The dataset</h3>
 				<img class="fragment fade-up" data-transition-speed="slow" data-src="img/enron_logo.png" width="30%" height="30%">
-				<p style="font-size:80%">In this course we will use <span style="color:lightgreen;font-weight:bold">Enron's emails dataset</span>. The dataset is a collection of emails from Enron's employees.</p>
-				<p style="font-size:80%">The dataset and more information about are available on <a href="https://www.cs.cmu.edu/~enron/">CMU</a>.</p>
+				<p class="fragment" style="font-size:80%">In this course we will use <span style="color:lightgreen;font-weight:bold">Enron's emails dataset</span>.</p>
+				<p class="fragment" style="font-size:80%">The dataset and more information about are available on <a href="https://www.cs.cmu.edu/~enron/">CMU</a>.</p>
 
 			</section>
 			<section>
@@ -153,6 +152,18 @@ investor
 				<img data-src="img/enro_er_diagram.png" width="100%" height="100%">
 				<p>Can you think of a different way to represent the data?</p>
 			</section>
+			<section>
+                            	<h3>Import the data</h3>
+				<p>Our <span style="color:lightgreen;font-weight:bold">PostgreSQL</span> is accessible here</p>
+				<pre>
+					<code>
+						<script type="text/template">server: 46.101.61.149:5050
+email: db_user@cdh.cam
+password: Theorize_Attentive5_Tantrum
+						</script>
+					</code>
+				</pre>
+			</section>
 			<section data-auto-animate>
 				<h4>Let's check the data</h4>
 				<img data-src="img/users_table.png" width="100%" height="100%">
@@ -169,7 +180,7 @@ investor
 				<p>Emails table</p>
 			</section>
 			<section data-auto-animate>
-				<h4>Find the most active day📢</h4>
+				<h4>Find the most active day 🤸🏾</h4>
 				<pre>
 					<code data-line-numbers="1|2|3|4">
 						<script type="text/template">SELECT emails.email_date::date  "Day", count(*) Transactions
@@ -181,7 +192,7 @@ ORDER BY Transactions DESC;
 				</pre>
 			</section>
 			<section data-auto-animate>
-				<h4>Find who recieved the most emails 📢</h4>
+				<h4>Find who recieved the highest count of emails 📬</h4>
 				<pre>
 					<code data-line-numbers="3-6|3,7,8|1,2,9">
 						<script type="text/template">SELECT a.emails_count,
@@ -198,7 +209,7 @@ ORDER  BY a.emails_count DESC;
 				</pre>
 			</section>
 			<section data-auto-animate>
-				<h4>Find who was cc'd/to'd in emails the most📢</h4>
+				<h4>Find who was cc'd/to'd in emails the most 📥</h4>
 				<pre>
 					<code data-line-numbers="6-10,12-16|5,11,17|1,2-4,18,19">
 						<script type="text/template">SELECT *
@@ -224,7 +235,7 @@ ORDER BY d.to_cc_ratio;						</script>
 				</pre>
 			</section>
 			<section data-auto-animate>
-				<h4>Find who sends the most emails and receives the least📢</h4>
+				<h4>Find who sends the most emails and receives the least 📭</h4>
 				<pre>
 					<code>
 						<script type="text/template">SELECT *
@@ -252,9 +263,9 @@ ORDER BY d.send_receive_ratio DESC;
 				</pre>
 			</section>
 			<section data-auto-animate>
-				<h4>Find who sent emails about LJM the most📢</h4>
+				<h4>Find who sent emails about LJM the most 📮</h4>
 				<pre>
-					<code data-line-numbers="1|2">
+					<code>
 						<script type="text/template">SELECT *
 FROM
   (SELECT c.sender,
