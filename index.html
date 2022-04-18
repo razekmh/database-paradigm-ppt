@@ -153,7 +153,7 @@ investor
 				<p>Can you think of a different way to represent the data?</p>
 			</section>
 			<section>
-                            	<h3>Import the data</h3>
+                            	<h3>The course server</h3>
 				<p>Our <span style="color:lightgreen;font-weight:bold">PostgreSQL</span> is accessible here</p>
 				<pre>
 					<code>
@@ -163,6 +163,11 @@ password: Theorize_Attentive5_Tantrum
 						</script>
 					</code>
 				</pre>
+			</section>
+			<section data-auto-animate>
+				<h4>PG Admin interface</h4>
+				<img data-src="img/pg_admin_browser.png" width="35%" height="35%">
+				<p>Find enron tables</p>
 			</section>
 			<section data-auto-animate>
 				<h4>Let's check the data</h4>
@@ -219,18 +224,18 @@ FROM
    FROM (
            (SELECT receiver AS to_receiver,
                    Count(*) AS to_emails_count
-            FROM eamil_transactions
+            FROM email_transactions
             WHERE transaction_type LIKE 'to'
             GROUP BY to_receiver) AS a
          INNER JOIN
            (SELECT receiver AS cc_receiver,
                    Count(*) AS cc_emails_count
-            FROM eamil_transactions
+            FROM email_transactions
             WHERE transaction_type LIKE 'cc'
             GROUP BY cc_receiver) AS b 
 	    ON a.to_receiver = b.cc_receiver) AS c) AS d
 INNER JOIN users e ON d.receiver = e.user_id
-ORDER BY d.to_cc_ratio;						</script>
+ORDER BY d.to_cc_ratio DESC;						</script>
 					</code>
 				</pre>
 			</section>
@@ -247,12 +252,12 @@ FROM
    FROM (
            (SELECT sender,
                    Count(*) AS send_count
-            FROM eamil_transactions
+            FROM email_transactions
             GROUP BY sender) AS a
          INNER JOIN
            (SELECT receiver,
                    Count(*) AS receive_count
-            FROM eamil_transactions
+            FROM email_transactions
             GROUP BY receiver) AS b ON a.sender = b.receiver
          AND a.send_count > 10
          AND b.receive_count > 10) AS c) AS d
@@ -276,7 +281,7 @@ FROM
         (SELECT email_message_id
          FROM emails
          WHERE email_body ~ ' *ljm\d* *') AS a
-      INNER JOIN eamil_transactions b ON a.email_message_id = b.email_message_id) AS c
+      INNER JOIN email_transactions b ON a.email_message_id = b.email_message_id) AS c
    GROUP BY c.sender) AS d
 INNER JOIN users e ON d.sender = e.user_id
 ORDER BY d.email_count DESC;
