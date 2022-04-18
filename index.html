@@ -169,9 +169,21 @@ investor
 				<p>Emails table</p>
 			</section>
 			<section data-auto-animate>
+				<h4>Find the most active day📢</h4>
+				<pre>
+					<code data-line-numbers="1|2|3|4">
+						<script type="text/template">SELECT emails.email_date::date  "Day", count(*) Transactions
+FROM emails
+group by 1
+ORDER BY Transactions DESC;
+						</script>
+					</code>
+				</pre>
+			</section>
+			<section data-auto-animate>
 				<h4>Find who recieved the most emails 📢</h4>
 				<pre>
-					<code data-line-numbers="1|2">
+					<code data-line-numbers="3-6|3,7,8|1,2,9">
 						<script type="text/template">SELECT a.emails_count,
        b.*
 FROM   (SELECT receiver,
@@ -186,21 +198,9 @@ ORDER  BY a.emails_count DESC;
 				</pre>
 			</section>
 			<section data-auto-animate>
-				<h4>Find the most active day📢</h4>
-				<pre>
-					<code data-line-numbers="1|2">
-						<script type="text/template">SELECT emails.email_date::date  "Day", count(*) Transactions
-FROM emails
-group by 1
-ORDER BY Transactions DESC;
-						</script>
-					</code>
-				</pre>
-			</section>
-			<section data-auto-animate>
 				<h4>Find who was cc'd/to'd in emails the most📢</h4>
 				<pre>
-					<code data-line-numbers="1|2">
+					<code data-line-numbers="6-10,12-16|5,11,17|1,2-4,18,19">
 						<script type="text/template">SELECT *
 FROM
   (SELECT c.to_receiver AS receiver,
@@ -216,7 +216,8 @@ FROM
                    Count(*) AS cc_emails_count
             FROM eamil_transactions
             WHERE transaction_type LIKE 'cc'
-            GROUP BY cc_receiver) AS b ON a.to_receiver = b.cc_receiver) AS c) AS d
+            GROUP BY cc_receiver) AS b 
+	    ON a.to_receiver = b.cc_receiver) AS c) AS d
 INNER JOIN users e ON d.receiver = e.user_id
 ORDER BY d.to_cc_ratio;						</script>
 					</code>
@@ -225,7 +226,7 @@ ORDER BY d.to_cc_ratio;						</script>
 			<section data-auto-animate>
 				<h4>Find who sends the most emails and receives the least📢</h4>
 				<pre>
-					<code data-line-numbers="1|2">
+					<code>
 						<script type="text/template">SELECT *
 FROM
   (SELECT c.sender AS person_id,
