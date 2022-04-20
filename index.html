@@ -19,11 +19,11 @@
 	<div class="reveal">
 		<div class="slides">
 			<section data-auto-animate data-autoslide="300">
-				<img src="img/db_frame.png" alt="database icon" width="230" height="300"> 
+				<img src="img/db_frame.png" alt="database icon" width="230" height="300">
 				<h3>Introduction to Database Paradigms</h3>
-			</section>	
+			</section>
 			<section data-auto-animate>
-				<img src="img/db_frame.png" alt="database icon" width="230" height="300"> 
+				<img src="img/db_frame.png" alt="database icon" width="230" height="300">
 				<h3>Introduction to Database Paradigms</h3>
 				<small style="font-family:'Comforter'"><em>a workshop by Mahmoud Abdelrazek</em></small>
 			</section>
@@ -39,36 +39,50 @@
 				<h3>This is Me</h3>
 				<img data-src="img/mrazek.jpg" width="25%" height="25%">
 				<p>My name is <span style="color:lightblue;font-weight:bold">Mahmoud Abdelrazek</span></p>
-				<p style="margin:0px; padding:0px; border:0px;">I worked with <span style="color:lightgreen;font-weight:bold">databases </span>here 👇🏾</p>
+				<p style="margin:0px; padding:0px; border:0px;">I worked with <span
+						style="color:lightgreen;font-weight:bold">databases </span>here 👇🏾</p>
 				<img data-src="img/workplace.png" width="70%" height="70%" style="margin:0px; padding:0px; border:0px;">
-				<p style="margin:0px; padding:0px; border:0px;">and I like to read 📖, run 🏃🏾, code 💻 and sleep 💤</p>
+				<p style="margin:0px; padding:0px; border:0px;">and I like to read 📖, run 🏃🏾, code 💻 and sleep 💤
+				</p>
 			</section>
 			<section>
 				<h3>About this course</h3>
 				<ul style="text-align: left;font-size:90%">
-					<li>What is a <span style="color:lightgreen;font-weight:bold">database</span>? And when do you need to use it?</li>
-					<li>What are the <span style="color:lightblue;font-weight:bold">different types</span> of database systems? And how to choose among them?</li>
-					<li>How to think about your data using <span style="color:lightgreen;font-weight:bold">database models</span>?</li>
+					<li>What is a <span style="color:lightgreen;font-weight:bold">database</span>? And when do you need
+						to use it?</li>
+					<li>What are the <span style="color:lightblue;font-weight:bold">different types</span> of database
+						systems? And how to choose among them?</li>
+					<li>How to think about your data using <span style="color:lightgreen;font-weight:bold">database
+							models</span>?</li>
 			</section>
 			<section>
 				<h3>The dataset</h3>
-				<img class="fragment fade-up" data-transition-speed="slow" data-src="img/enron_logo.png" width="30%" height="30%">
-				<p class="fragment" style="font-size:80%">In this course we will use <span style="color:lightgreen;font-weight:bold">Enron's emails dataset</span>.</p>
-				<p class="fragment" style="font-size:80%">The dataset and more information about are available on <a href="https://www.cs.cmu.edu/~enron/">CMU</a>.</p>
+				<img class="fragment fade-up" data-transition-speed="slow" data-src="img/enron_logo.png" width="30%"
+					height="30%">
+				<p class="fragment" style="font-size:80%">In this course we will use <span
+						style="color:lightgreen;font-weight:bold">Enron's emails dataset</span>.</p>
+				<p class="fragment" style="font-size:80%">The dataset and more information about are available on <a
+						href="https://www.cs.cmu.edu/~enron/">CMU</a>.</p>
 
 			</section>
 			<section>
 				<h1>Chapter one</h1>
 				<p style="text-align: left;"><em>- Bob: Maybe we should use a database?</em> 🤔 </p>
-				<p style="text-align: left;"><em>- Alice: I don't know </em> 😶 <em>don't know what a database is.</em></p>
+				<p style="text-align: left;"><em>- Alice: I don't know </em> 😶 <em>don't know what a database is.</em>
+				</p>
 			</section>
 			<section>
 				<h3>You've Got Data 🎉</h3>
-				<p style="text-align:left;">Once you receive a <span style="color:lightblue;font-weight:bold">new dataset</span>, the first step is always to inspect it or at least a sample of it <span style="color:lightgreen;font-weight:bold">visually</span> and then conduct a quick <span style="color:lightgreen;font-weight:bold">Exploratory Data Analysis</span>.</p>
+				<p style="text-align:left;">Once you receive a <span style="color:lightblue;font-weight:bold">new
+						dataset</span>, the first step is always to inspect it or at least a sample of it <span
+						style="color:lightgreen;font-weight:bold">visually</span> and then conduct a quick <span
+						style="color:lightgreen;font-weight:bold">Exploratory Data Analysis</span>.</p>
 				<p style="text-align: left;font-size:80%">Some of the questions you might like to ask are:</p>
 				<ul style="text-align: left;font-size:70%">
-					<li>What is the <span style="color:lightgreen;font-weight:bold">nature</span> of your data? text, images, DNA sequances?</li>
-					<li>What is the <span style="color:lightgreen;font-weight:bold">data type</span> of each column?</li>
+					<li>What is the <span style="color:lightgreen;font-weight:bold">nature</span> of your data? text,
+						images, DNA sequances?</li>
+					<li>What is the <span style="color:lightgreen;font-weight:bold">data type</span> of each column?
+					</li>
 					<li>How is your data <span style="color:lightgreen;font-weight:bold">structured</span>?</li>
 			</section>
 			<section>
@@ -116,36 +130,56 @@ investor
 				<h4>But, why do you care about this dataset?</h4>
 				<p>What questions are you trying to answer?</p>
 				<ul>
-				<li>Maybe you want to find <span style="color:lightgreen;font-weight:bold">the most active employee</span> in the company?</li>
-				<li>Maybe you want to find <span style="color:lightgreen;font-weight:bold">the most comman phrases</span> in the company's communication?</li>
-				<li>Maybe you want to understand <span style="color:lightgreen;font-weight:bold">the connections between employees</span> inside the company?</li>
+					<li>Maybe you want to find <span style="color:lightgreen;font-weight:bold">the most active
+							employee</span> in the company?</li>
+					<li>Maybe you want to find <span style="color:lightgreen;font-weight:bold">the most comman
+							phrases</span> in the company's communication?</li>
+					<li>Maybe you want to understand <span style="color:lightgreen;font-weight:bold">the connections
+							between employees</span> inside the company?</li>
 			</section>
 			<section>
 				<h3>To Database or Not to Database ❓</h3>
 				</br>
 				<ul style="text-align: left">
-					<li>What is the <span style="color:lightgreen;font-weight:bold">size</span> of your data ?</br>		- larger than excel limit</li></br>
-					<li>How often does your data <span style="color:lightgreen;font-weight:bold">change</span> ?</br>	- it gets modified every few minutes</li></br>
-					<li>Who will <span style="color:lightgreen;font-weight:bold">interact</span> with your data ?</br>	- multiple researchers</li>
+					<li>What is the <span style="color:lightgreen;font-weight:bold">size</span> of your data ?</br> -
+						larger than excel limit</li></br>
+					<li>How often does your data <span style="color:lightgreen;font-weight:bold">change</span> ?</br> -
+						it gets modified every few minutes</li></br>
+					<li>Who will <span style="color:lightgreen;font-weight:bold">interact</span> with your data ?</br> -
+						multiple researchers</li>
 			</section>
 			<section>
 				<h3>Data Modeling &</br> Data Engineering</h3>
-				<p style="text-align: left">Before importing your data to the database we need to <span style="color:lightgreen;font-weight:bold">engineer</span> it to match the <span style="color:lightgreen;font-weight:bold">model</span> of the databses management system.</p>
+				<p style="text-align: left">Before importing your data to the database we need to <span
+						style="color:lightgreen;font-weight:bold">engineer</span> it to match the <span
+						style="color:lightgreen;font-weight:bold">model</span> of the databses management system.</p>
 				<ul style="text-align: left">
-					<li><span style="color:lightblue;font-weight:bold">Data Model:</span> is an abstract model that organizes elements of data and standardizes how they relate to one another and to the properties of real-world entities. <span style="font-size:40%;font-style: italic"><a href="https://en.wikipedia.org/wiki/Data_model">Wiki</a></span></li>
-					<li><span style="color:lightblue;font-weight:bold">Data Engineering:</span> is the practice designing and building systems for collecting, storing, and analyzing data at scale. <span style="font-size:40%;font-style:italic"><a href="https://www.coursera.org/articles/what-does-a-data-engineer-do-and-how-do-i-become-one">coursera</a></span></li>
+					<li><span style="color:lightblue;font-weight:bold">Data Model:</span> is an abstract model that
+						organizes elements of data and standardizes how they relate to one another and to the properties
+						of real-world entities. <span style="font-size:40%;font-style: italic"><a
+								href="https://en.wikipedia.org/wiki/Data_model">Wiki</a></span></li>
+					<li><span style="color:lightblue;font-weight:bold">Data Engineering:</span> is the practice
+						designing and building systems for collecting, storing, and analyzing data at scale. <span
+							style="font-size:40%;font-style:italic"><a
+								href="https://www.coursera.org/articles/what-does-a-data-engineer-do-and-how-do-i-become-one">coursera</a></span>
+					</li>
 			</section>
 			<section>
 				<h4>We have to address the elephant in the room</h4>
 				<img data-src="img/Postgresql_elephant.png" width="35%" height="35%">
-				<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">PostgreSQL</span> is an open source Database Management System</span></p>
+				<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">PostgreSQL</span> is an
+						open source Database Management System</span></p>
 			</section>
 			<section>
 				<h3>Entity Relationship Model</h3>
 				<img data-src="img/ER_diagram.png" width="70%" height="70%"></br></br>
 				<ul style="text-align: left">
-					<li><span style="color:lightblue;font-weight:bold">An entity</span> may be defined as a thing capable of an independent existence that can be uniquely identified.</li></br>
-					<li><span style="color:lightgreen;font-weight:bold">A relationship</span> captures how entities are related to one another <span style="font-size:40%;font-style:italic"><a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model#Entity%E2%80%93relationship_model">wiki</a></span></li>
+					<li><span style="color:lightblue;font-weight:bold">An entity</span> may be defined as a thing
+						capable of an independent existence that can be uniquely identified.</li></br>
+					<li><span style="color:lightgreen;font-weight:bold">A relationship</span> captures how entities are
+						related to one another <span style="font-size:40%;font-style:italic"><a
+								href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model#Entity%E2%80%93relationship_model">wiki</a></span>
+					</li>
 			</section>
 			<section>
 				<h3>Entity Relationship Diagram</h3>
@@ -153,7 +187,7 @@ investor
 				<p>Can you think of a different way to represent the data?</p>
 			</section>
 			<section>
-                            	<h3>The course server</h3>
+				<h3>The course server</h3>
 				<p>Our <span style="color:lightgreen;font-weight:bold">PostgreSQL</span> is accessible here</p>
 				<pre>
 					<code>
@@ -295,11 +329,14 @@ ORDER BY d.email_count DESC;
 			<section>
 				<h1>Chapter two</h1>
 				<p style="text-align: left;"><em>- Bob: How can we analyze all this text?</em> 🤔 </p>
-				<p style="text-align: left;"><em>- Alice: I have an idea </em> 💡 <em>we can search through it?</em> 🔎</p>
+				<p style="text-align: left;"><em>- Alice: I have an idea </em> 💡 <em>we can search through it?</em> 🔎
+				</p>
 			</section>
 			<section>
 				<h3>Data Types 📊</h3>
-				<p style="text-align: left;">an attribute of data which tells the computer how the programmer intends to use the data <span style="font-size:40%;font-style: italic"><a href="https://en.wikipedia.org/wiki/Data_type">Wiki</a></span></p>
+				<p style="text-align: left;">an attribute of data which tells the computer how the programmer intends to
+					use the data <span style="font-size:40%;font-style: italic"><a
+							href="https://en.wikipedia.org/wiki/Data_type">Wiki</a></span></p>
 				<table class="fragment">
 					<tr class="fragment">
 						<th><span style="color: lightblue;">3.14</span></th>
@@ -351,14 +388,29 @@ ORDER BY d.email_count DESC;
 			</section>
 			<section>
 				<h3>Data organization</h3></br>
-				<p style="text-align:left;"><span style="color:lightblue;font-weight:bold">Normalization 🔗</span> is generally used with SQL databases to<span style="color:lightgreen;font-weight:bold"> reduces data redundancy</span> and <span style="color:lightgreen;font-weight:bold">eliminates structural dependency</span>.</p></br>
-				<p style="text-align:left;"><span style="color:lightblue;font-weight:bold">Denormalization 📜</span> is used with NoSQL database to<span style="color:lightgreen;font-weight:bold"> improves read speed</span></p>
+				<p style="text-align:left;"><span style="color:lightblue;font-weight:bold">Normalization 🔗</span> is
+					generally used with SQL databases to<span style="color:lightgreen;font-weight:bold"> reduces data
+						redundancy</span> and <span style="color:lightgreen;font-weight:bold">eliminates structural
+						dependency</span>.</p></br>
+				<p style="text-align:left;"><span style="color:lightblue;font-weight:bold">Denormalization 📜</span> is
+					used with NoSQL database to<span style="color:lightgreen;font-weight:bold"> improves read
+						speed</span></p>
 			</section>
 			<section>
-				<h4></h4>
-				<img data-src="img/elasticsearch_logo.png" width="35%" height="35%">
-
-				<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">Elasticsearch</span> is a fast and scalable search and analytics engine.</span></p>
+				<h3>Entity Relationship Model</h3>
+				<img data-src="img/ER_diagram.png" width="70%" height="70%"></br></br>
+				<ul style="text-align: left">
+					<li><span style="color:lightblue;font-weight:bold">An entity</span> may be defined as a thing
+						capable of an independent existence that can be uniquely identified.</li></br>
+					<li><span style="color:lightgreen;font-weight:bold">A relationship</span> captures how entities are
+						related to one another <span style="font-size:40%;font-style:italic"><a
+								href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model#Entity%E2%80%93relationship_model">wiki</a></span>
+					</li>
+			</section>
+			<section>
+				<h3>Entity Relationship Diagram</h3>
+				<img data-src="img/enro_er_diagram.png" width="100%" height="100%">
+				<p>Can you think of a different way to represent the data?</p>
 			</section>
 			<section>
 				<h3>Document Data Model📃</h3>
@@ -655,41 +707,174 @@ ORDER BY d.email_count DESC;
 				</pre>
 			</section>
 			<section>
+				<h4></h4>
+				<img data-src="img/elasticsearch_logo.png" width="35%" height="35%">
+				<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">Elasticsearch</span> is
+						a fast and scalable search and analytics engine.</span></p>
+			</section>
+			<section>
 				<h3>The course server</h3>
-<p>Our <span style="color:lightgreen;font-weight:bold">Elasticsearch</span> is accessible here</p>
-<pre>
+				<p>Our <span style="color:lightgreen;font-weight:bold">Elasticsearch</span> is accessible here</p>
+				<pre>
 	<code>
 		<script type="text/template">server: 46.101.61.149:5601	</script>
 	</code>
 </pre>
-<p> No user name nor password are required</p>
-</section>
-<section>
-	<h4>Elasticsearch server 💽 </h4>
-	<img data-src="img/elasticsearch_screen_01.png" width="50%" height="50%">
-</section>
-<section>
-	<h4>Elasticsearch server 💽 </h4>
-	<img data-src="img/elasticsearch_screen_02.png" width="60%" height="60%">
-</section>
-<section>
-	<h4>Elasticsearch server 💽 </h4>
-	<img data-src="img/elasticsearch_screen_03.png" width="60%" height="60%">
-	<p></p>
-</section>
-<section>
-	<h4>Elasticsearch server 💽 </h4>
-	<img data-src="img/elasticsearch_screen_04.png" width="60%" height="60%">
-	<p></p>
-</section>
-
+				<p> No user name nor password are required</p>
+			</section>
+			<section>
+				<h4>Elasticsearch server 💽 </h4>
+				<img data-src="img/elasticsearch_screen_01.png" width="50%" height="50%">
+			</section>
+			<section>
+				<h4>Elasticsearch server 💽 </h4>
+				<img data-src="img/elasticsearch_screen_02.png" width="60%" height="60%">
+			</section>
+			<section>
+				<h4>Elasticsearch server 💽 </h4>
+				<img data-src="img/elasticsearch_screen_03.png" width="60%" height="60%">
+				<p></p>
+			</section>
+			<section>
+				<h4>Elasticsearch server 💽 </h4>
+				<img data-src="img/elasticsearch_screen_04.png" width="60%" height="60%">
+				<p></p>
+			</section>
+			<section data-auto-animate>
+				<h4>Find a multi word phrase</h4>
+				<pre>
+		<code>
+			<script type="text/template">GET enron_emails/_search
+{
+	"query": {
+	"query_string": {
+		"default_field": "email_body",
+		"query": "\"Where are you right now? i am in london,\""
+		}
+	}
+}
+			</script>
+		</code>
+	</pre>
+	<pre>
+		<code>
+			<script type="text/template">Elasticsearch 240 msec</script>
+		</code>
+	</pre>
+			</section>
+			<section data-auto-animate>
+				<h4>Find a multi word phrase</h4>
+				<pre>
+		<code>
+			<script type="text/template">SELECT * 
+FROM emails
+WHERE email_body LIKE '%where are you right now? i am in london%';
+			</script>
+		</code>
+	</pre>
+	<pre>
+		<code>
+			<script type="text/template">PostgreSQL 1 secs 300 msec</script>
+		</code>
+	</pre>
+			</section>
+			<section data-auto-animate>
+				<h4>Find a multi word phrase</h4>
+				<pre>
+		<code>
+			<script type="text/template">GET enron_emails/_search
+{ "size": 1000, 
+  "query": {
+    "query_string": {
+      "query": "\"mark to market\"",
+      "default_field": "email_body"
+    }
+  }
+}
+			</script>
+		</code>
+	</pre>
+	<pre>
+		<code>
+			<script type="text/template">Elasticsearch 457 hits</script>
+		</code>
+	</pre>
+			</section>
+			<section data-auto-animate>
+				<h4>Find a multi word phrase</h4>
+				<pre>
+		<code>
+			<script type="text/template">SELECT * 
+FROM emails
+WHERE email_body LIKE '%mark to market%';
+			</script>
+		</code>
+	</pre>
+	<pre>
+		<code>
+			<script type="text/template">PostgreSQL 153 hits</script>
+		</code>
+	</pre>
+			</section>
+		</section>
+		<section data-auto-animate>
+			<h4>Joins vs keywords</h4>
+			<pre>
+	<code>
+		<script type="text/template">GET enron_emails/_search
+{ "size": 10000, 
+	"query": {
+	"query_string": {
+		"query": "sylvia.pollan@enron.com",
+		"default_field": "email_to.keyword"
+		}
+	}
+}
+		</script>
+	</code>
+</pre>
+<pre>
+	<code>
+		<script type="text/template">Elasticsearch 150 msec</script>
+	</code>
+</pre>
+		</section>
+		<section data-auto-animate>
+			<h4>Joins vs keywords</h4>
+			<pre>
+	<code>
+		<script type="text/template">SELECT * FROM 
+(SELECT * FROM email_transactions
+WHERE receiver = 
+(SELECT user_id FROM users
+WHERE user_email = 'sylvia.pollan@enron.com') AND transaction_type = 'to') AS a
+INNER JOIN 
+emails b
+on a.email_message_id = b.email_message_id;
+		</script>
+	</code>
+</pre>
+<pre>
+	<code>
+		<script type="text/template">PostgreSQL 630 msec</script>
+	</code>
+</pre>
+		</section>
+		<section>
+			<h4></h4>
+			<img data-src="img/kibana_logo.png" width="80%" height="80%">
+			<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">Kibana</span> Dashboards</span></p>
+		</section>
 			<section>
 				<h3>connect with me 🤝🏾</h3>
 				<p>You can find me as <span style="color:lightgreen;font-weight:bold">razemk</span> on:</p>
 				<a href="https://twitter.com/razekmh"><img data-src="img/twitter_logo.png" width="10%" height="10%"></a>
-				<a href="https://linkedin.com/in/razekmh"><img data-src="img/linkedin_logo.png" width="10%" height="10%"></a>
-				<a href="https://facebook.com/razekmh"><img data-src="img/facebook_logo.png" width="10%" height="10%"></a>
-				<a href="https://instagram.com/razekmh"><img data-src="img/instagram_logo.png" width="10%" height="10%"></a>
+				<a href="https://linkedin.com/in/razekmh"><img data-src="img/linkedin_logo.png" width="10%"
+						height="10%"></a>
+				<a href="https://facebook.com/razekmh"><img data-src="img/facebook_logo.png" width="10%"
+						height="10%"></a>
+				<a href="https://instagram.com/razekmh"><img data-src="img/instagram_logo.png" width="10%"
+						height="10%"></a>
 				<a href="https://github.com/razekmh"><img data-src="img/github_logo.png" width="10%" height="10%"></a>
 				<a href="mailto:razekmh@gmail.com"><img data-src="img/gmail_logo.png" width="10%" height="10%"></a>
 				<a href="https://t.me/razekmh"><img data-src="img/telegram_logo.png" width="10%" height="10%"></a>
@@ -708,7 +893,7 @@ ORDER BY d.email_count DESC;
 		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
-			slideNumber:"h/v",
+			slideNumber: "h/v",
 
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
