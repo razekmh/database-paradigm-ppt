@@ -187,7 +187,7 @@ password: Theorize_Attentive5_Tantrum
 			<section data-auto-animate>
 				<h4>Find the most active day 🤸🏾</h4>
 				<pre>
-					<code data-line-numbers="1|2|3|4">
+					<code>
 						<script type="text/template">SELECT emails.email_date::date  "Day", count(*) Transactions
 FROM emails
 group by 1
@@ -199,7 +199,7 @@ ORDER BY Transactions DESC;
 			<section data-auto-animate>
 				<h4>Find who recieved the highest count of emails 📬</h4>
 				<pre>
-					<code data-line-numbers="3-6|3,7,8|1,2,9">
+					<code>
 						<script type="text/template">SELECT a.emails_count,
        b.*
 FROM   (SELECT receiver,
@@ -216,7 +216,7 @@ ORDER  BY a.emails_count DESC;
 			<section data-auto-animate>
 				<h4>Find who was cc'd/to'd in emails the most 📥</h4>
 				<pre>
-					<code data-line-numbers="6-10,12-16|5,11,17|1,2-4,18,19">
+					<code>
 						<script type="text/template">SELECT *
 FROM
   (SELECT c.to_receiver AS receiver,
@@ -343,6 +343,253 @@ ORDER BY d.email_count DESC;
 	"<12358009.1075859655147.JavaMail.evans@thyme>",
 	"<25850545.1075859665730.JavaMail.evans@thyme>",
 	"<30070529.1075859662879.JavaMail.evans@thyme>"
+	]
+}
+						</script>
+					</code>
+				</pre>
+			</section>
+			<section data-auto-animate>
+				<h3>Document Data Model📃</h3>
+				<pre>
+					<code>
+						<script type="text/template">{
+	"email_to": "mark.haedicke@enron.com",
+	"emails": [{
+			"email_subject": "re dash regarding sale of eccs interest in invasion energy",
+			"email_bcc": [
+				"greg.johnston@enron.com"
+			],
+			"email_to": [
+				"mark.haedicke@enron.com"
+			],
+			"email_from": "peter.keohane@enron.com",
+			"email_date": "2001-05-09 14:36:00",
+			"email_message_id": "<6825368.1075859805131.JavaMail.evans@thyme>",
+			"email_cc": [
+				"greg.johnston@enron.com"
+			],
+			"email_body": "mark, i am very familiar with gregs closing structure (exceptional in terms  of mitigating risk) and with the company (i am not aware of material risks  that should arise post-closing) and would endorse the dash. peter."
+		},
+		{
+			"email_subject": "risk memo - first italian power import",
+			"email_bcc": [
+				"riccardo.bortolotti@enron.com",
+				"mark.frevert@enron.com",
+				"danny.mccarty@enron.com",
+				"john.sherriff@enron.com",
+				"rick.buy@enron.com",
+				"steve.young@enron.com",
+				"scott.sefton@enron.com",
+				"michael.brown@enron.com",
+				"shirley.hudler@enron.com"
+			],
+			"email_to": [
+				"mark.haedicke@enron.com",
+				"julia.murray@enron.com"
+			],
+			"email_from": "paul.simons@enron.com",
+			"email_date": "1999-07-07 19:30:00",
+			"email_message_id": "<15934776.1075844996356.JavaMail.evans@thyme>",
+			"email_cc": [
+				"riccardo.bortolotti@enron.com",
+				"mark.frevert@enron.com",
+				"danny.mccarty@enron.com",
+				"john.sherriff@enron.com",
+				"rick.buy@enron.com",
+				"steve.young@enron.com",
+				"scott.sefton@enron.com",
+				"michael.brown@enron.com",
+				"shirley.hudler@enron.com"
+			],
+			"email_body": "this risk memo relates to our first import of physical power into italy.  under the deal, we supply the municipality, imola, with 66gwh of power at the  swiss/italian border for 1 year (rolling for further yearly periods if the  contract is not terminated by either party). the contract value is in the  region of o1 million. the power is for onward supply to imolas own customers.  the contract is on a standard form i produced recently in conjunction with  italian counsel, but warrants this risk memo as it is the first deal of its  kind. it is conditional on imola securing from the italian network operator  (enel) transmission from the border to the ultimate customer within 90 days.  we have agreed we will extend this period by a further 90 days in appropriate  circumstances. we prepared the customers request for transmission to give it  the best possible chance of success.  as required by italian law, imola have the right to terminate the contract at  any time (including during the first year) upon 6 months notice. we are  raising with the italian energy authority whether such a right of termination  (which was recently introduced under the new energy law) is appropriate for  one year deals such as this. in the case of imola, we are seeking to restrict  their right of termination to cases where their own customers have exercised  the same right (this will stop imola shopping around for a better price). it  is not clear whether this restriction is effective under the new law, but we  have principle on our side (the law is intended to protect the ultimate  customer) and there is no legal (or other) down-side in including it.  each party has a right of termination if interconnector charges above a  certain proportion of the contract price are introduced. however, it is worth  noting that there are no such charges levied at the moment and (so far as we  are aware) none are proposed.  the contract includes a right on the part of enron to match third party  offers imola may receive when the contract expires, and italian counsel have  confirmed that this right should be legally enforceable by us.   the deal (and indeed the standard form) is subject to italian law and to icc  arbitration in geneva.  there are no particular legal risks under this transaction, but please call  me if you would like to discuss it in greater detail.  best regards  paul"
+		},
+		{
+			"email_subject": "enrononline executive summary for november 27, 2000",
+			"email_bcc": [
+				"savita.puthigai@enron.com",
+				"liz.taylor@enron.com",
+				"andy.zipper@enron.com",
+				"david.forster@enron.com",
+				"jennifer.thome@enron.com",
+				"michael.bridges@enron.com",
+				"kal.shah@enron.com",
+				"sheri.thomas@enron.com"
+			],
+			"email_to": [
+				"greg.whalley@enron.com",
+				"john.sherriff@enron.com",
+				"tim.belden@enron.com",
+				"mark.haedicke@enron.com",
+				"dave.samuels@enron.com",
+				"mark.palmer@enron.com",
+				"kathryn.corbally@enron.com",
+				"kimberly.hillis@enron.com",
+				"william.bradford@enron.com",
+				"steven.kean@enron.com",
+				"jay.fitzgerald@enron.com",
+				"paul.goddard@enron.com",
+				"daniel.reck@enron.com",
+				"jeffrey.mcmahon@enron.com",
+				"cedric.burgher@enron.com",
+				"rahil.jafry@enron.com",
+				"mark.pickering@enron.com",
+				"kenneth.lay@enron.com",
+				"jeffrey.shankman@enron.com",
+				"joseph.hirl@enron.com",
+				"douglas.friedman@enron.com",
+				"jeff.skilling@enron.com",
+				"jim.fallon@enron.com",
+				"allan.sommer@enron.com",
+				"sally.beck@enron.com",
+				"philippe.bibi@enron.com",
+				"mike.mcconnell@enron.com",
+				"george.mcclellan@enron.com",
+				"thor.lien@enron.com",
+				"mark.frevert@enron.com",
+				"bob.shults@enron.com",
+				"mark.koenig@enron.com",
+				"bruce.garner@enron.com",
+				"john.nowlan@enron.com",
+				"paula.rieker@enron.com",
+				"amita.gosalia@enron.com",
+				"louise.kitchen@enron.com",
+				"richard.lewis@enron.com",
+				"paul.quilkey@enron.com",
+				"bob.crane@enron.com",
+				"michael.r.brown@enron.com",
+				"joe.gold@enron.com",
+				"cliff.baxter@enron.com"
+			],
+			"email_from": "leonardo.pacheco@enron.com",
+			"email_date": "2000-11-28 15:33:00",
+			"email_message_id": "<21983635.1075859665979.JavaMail.evans@thyme>",
+			"email_cc": [
+				"savita.puthigai@enron.com",
+				"liz.taylor@enron.com",
+				"andy.zipper@enron.com",
+				"david.forster@enron.com",
+				"jennifer.thome@enron.com",
+				"michael.bridges@enron.com",
+				"kal.shah@enron.com",
+				"sheri.thomas@enron.com"
+			],
+			"email_body": "following please find the daily enrononline executive summary.  enrononline executive summary for 11/27/00 transaction summary  external transactions today 4,425 average daily external transactions (30 day trailing avg) 3,767 total life to date transactions 468,825  enrononline daily % of entitys total transactions for 11/27/00 trans percent enron north america 3,780 74% enron europe limited 164 35% global products 178 41% enron metals 303 15%  enrononline percentage of total corporate transactions  (30 day trailing avg) 52%  gross notional value of enrononline transactions total today 3,265,011,002 mtd 53,042,491,259 ltd 266,471,195,675 average daily notional value (30 day trailing avg) 2,645,326,254   notional revenue from physical flows to date 18,254,266,074  counterparties, users, and products offered  counterparties having transacted to date 579 new counterparties transacting for the first time today 1 number of products offered today 1,120 total number of external users logged on today 3,135 average # of external users logged on (30 day trailing avg) 2,812 "
+		},
+		{
+			"email_subject": "rac watch report",
+			"email_bcc": [],
+			"email_to": [
+				"mark.haedicke@enron.com"
+			],
+			"email_from": "keith.power@enron.com",
+			"email_date": "2001-04-03 14:49:00",
+			"email_message_id": "<866262.1075859795979.JavaMail.evans@thyme>",
+			"email_cc": [],
+			"email_body": "attached, please find the latest rac watch report for the period ending  mar-30-2001. please call rick carson at x3-3905 if you have questions or  comments.  "
+		},
+		{
+			"email_subject": "update on retention of lynn slade for seminole tribe transaction",
+			"email_bcc": [
+				"jeffrey.hodge@enron.com"
+			],
+			"email_to": [
+				"mark.haedicke@enron.com"
+			],
+			"email_from": "carlos.sole@enron.com",
+			"email_date": "2001-05-16 13:35:00",
+
+			"email_message_id": "<32085748.1075845027651.JavaMail.evans@thyme>",
+			"email_cc": [
+				"jeffrey.hodge@enron.com"
+			],
+			"email_body": "i wanted to update you on my request to retain lynn slade of modrall sperling  for a power plant development transaction involving the seminole tribe of  florida. in requesting jim derricks approval, he asked that i contact jim  mccartney of vinson & elkins to discuss such a retention because jim  mccartney who has had extensive enron experience regarding our right-of-way  agreements through indian country and recently had a mixed experience with  lynn slade. jim has been both candid and very helpful. he has recommended  that the better approaches would be either to retain mike webster, an indian  lawyer in montana, or find a lawyer in florida who has had direct experience  with seminoles. more importantly, jim graciously offered to review the  preliminary letter of intent that we are negotiating and offer his comments  based on his general indian law experience. he will charge the limited  amount of time that will be required for this review against his general  retainer that he has with jim derrick. at this preliminary stage, i believe  that jims review and comments will suffice for purposes of getting advice on  the letter of intent and i will continue to pursue identifying a  florida-based lawyer with experience in dealing with the seminoles.    carlos sole senior counsel enron north america corp. 1400 smith street houston, texas 77002-7361  (713) 345-8191 (phone) 713 646-3393 (fax)"
+		},
+		{
+			"email_subject": "legal risks - qlr",
+			"email_bcc": [
+				"chris.gaffney@enron.com",
+				"greg.johnston@enron.com",
+				"mark.powell@enron.com"
+			],
+			"email_to": [
+				"mark.haedicke@enron.com"
+			],
+			"email_from": "peter.keohane@enron.com",
+			"email_date": "2001-05-28 10:23:00",
+			"email_message_id": "<30860761.1075845029905.JavaMail.evans@thyme>",
+			"email_cc": [
+				"chris.gaffney@enron.com",
+				"greg.johnston@enron.com",
+				"mark.powell@enron.com"
+			],
+			"email_body": "mark, as we discussed, i see one of the growing legal risks for canada (and  perhaps elsewhere) resulting from retail deregulation and the pressure to  increase transaction flow/market scope in energy markets by transacting  behind and through the distribution company (or at point of delivery).  although generally speaking this is described as retail, it also affects  wholesale as (i) ews will manage risk for ees, and (ii) the distinctions  between retail and wholesale are not always clear (ex. depending on size  and complexity, traders/originators in ews will do point of delivery  transactions).   the risks tend to be additional to the customary commodity, price, legal and  credit risk management in wholesale transactions, as they also involve (i)  volume/load balancing risk between the counterparty and the disco,  particularly for all requirements, use or load following transactions  and particularly where the balancing obligation between the counterparty and  the disco is unhedged or mismatched (ex. balancing with the counterparty  for excess or unused volumes may be at daily index on the date of  consumption, whereas balancing with the disco may be at the monthly index for  the next month based on actual, estimated or aggregated data); (ii) terms and  conditions/tariff risk to the disco (ex. the distribution terms and  conditions/tariffs pass a number of risks on to the commodity supplier, such  as obligations to continue delivery after counterparty default or  termination, options to the disco to source supply after default or  termination, broad third party indemnifications to the disco for conduct of  the counterparty, allocation of force majeure risk (that may differ from the  counterparty agreement); (iii) additional or incremental credit obligations  to the disco; and (iv) pressure in these markets to used more simplified  (often government regulated) non-master contract forms - although the forms  used tend to be more unilateral to the commodity supplier.  the mitigant is to understand clearly both the formal and practical market,  rules, requirements, procedures, regulations and distribution terms and  conditions applicable to delivering the commodity behind and through the  disco, if possible to get involved in shaping those in a proactive way  through the deregulation process, and developing risk management procedures  around the formal and practical requirements of the market.  for your risk memo you could briefly describe the risk as point of  delivery risk (retail or wholesale) for energy commodities behind and through  the distribution company, including balancing commodity use between the disco  and the customer, distribution tariff/terms and conditions risks, incremental  credit obligations between wholesale markets and the disco, and commercial  and regulatory requirements for contracting.   please call if you want to discuss further. peter."
+		},
+		{
+			"email_subject": "final final versions of chinese wall docs",
+			"email_bcc": [],
+			"email_to": [
+				"donna.wackerle@enron.com",
+				"mark.haedicke@enron.com",
+				"donna.lowry@enron.com",
+				"alan.aronowitz@enron.com",
+				"mark.greenberg@enron.com"
+			],
+			"email_from": "robert.bruce@enron.com",
+			"email_date": "2000-11-29 10:32:00",
+			"email_message_id": "<7168210.1075859666217.JavaMail.evans@thyme>",
+			"email_cc": [],
+			"email_body": "enclosed are redlined and clean copies of the final versions of the executive  summary and policies and procedures. these have been revised per lance  schulers requested revisions. almost all of the changes are in the opening  paragraph in each document.    donna w. please save the clean copies to your system as the final versions  of our new policy. thanks -- bob   robert e. bruce senior counsel enron north america corp. t (713) 345-7780 f (713) 646-3393 robert.bruce@enron.com"
+		},
+		{
+			"email_subject": "re rfp response",
+			"email_bcc": [],
+			"email_to": [
+				"mark.haedicke@enron.com"
+			],
+			"email_from": "david.minns@enron.com",
+			"email_date": "2000-09-27 08:25:00",
+			"email_message_id": "<12358009.1075859655147.JavaMail.evans@thyme>",
+			"email_cc": [],
+			"email_body": "i exchanged voice mails with rob pickel last week to confirm that he got the  submission. his tone one could describe as polite but guarded. he said he  would let us know.  well we gave it our best shot and we now await their response. i suspect our  proposal may be a bit like cathy freeman in the 200 metres. a win over marion  jones is possible but no more.      from mark e haedicke@ect on 26/09/2000 0232 pm cdt to david minns/enron_development@enron_development cc   subject re rfp response   everyone was intrigued that enron submitted a proposal. however, it is  difficult to guess the outcome. mark  "
+		},
+		{
+			"email_subject": "status of ena litigation",
+			"email_bcc": [
+				"tammy.shepperd@enron.com",
+				"david.delainey@enron.com",
+				"mark.frevert@enron.com",
+				"julia.murray@enron.com",
+				"stephanie.harris@enron.com"
+			],
+			"email_to": [
+				"mark.haedicke@enron.com"
+			],
+			"email_from": "twanda.sweet@enron.com",
+			"email_date": "2000-11-28 11:08:00",
+			"email_message_id": "<25850545.1075859665730.JavaMail.evans@thyme>",
+			"email_cc": [
+				"tammy.shepperd@enron.com",
+				"david.delainey@enron.com",
+				"mark.frevert@enron.com",
+				"julia.murray@enron.com",
+				"stephanie.harris@enron.com"
+			],
+			"email_body": "attached is an updated status report re ena litigation. "
+		},
+		{
+			"email_subject": "first gas -- siemens fuel specs",
+			"email_bcc": [],
+			"email_to": [
+				"mark.haedicke@enron.com",
+				"alan.aronowitz@enron.com"
+			],
+			"email_from": "janice.moore@enron.com",
+			"email_date": "2000-11-14 17:46:00",
+			"email_message_id": "<30070529.1075859662879.JavaMail.evans@thyme>",
+			"email_cc": [],
+			"email_body": "i have been meaning to let both of you know the status on this matter. there  have been no more calls for additional meetings w/ mcconnell.   the last cargo delivered went in with no problems. we had some doubts that  (i) the tanks would hold all of the barrels because the plant had not been  running as scheduled, and (ii) that the testing would turn out to be on  spec. as it turned out, the cargo tested on spec, and was discharged without  any demurrage. ectrs even made some money on the deal (not a lot, but  some).   and the attached is the latest on our efforts to get the specs issues  addressed by siemens. regards, janice  eb3861 assistant general counsel, enron north america corp. 713-853-1794 (fax 713-646-4842) ----- forwarded by janice r moore/hou/ect on 11/14/2000 0538 pm -----   michael l brown@enron  11/14/2000 0532 pm        to robert c williams/enron_development@enron_development    cc john l nowlan/hou/ect@ect, janice r moore/hou/ect@ect, david a  terlip/corp/enron@enron    subject siemens fuel specs  bob,  see note below fyi. regards, mike ---------------------- forwarded by michael l brown/corp/enron on 11/14/2000  0535 pm ---------------------------   michael l brown 11/14/2000 0527 pm to jonrusse@skyinet.net cc rbtantoco@firstgas.com.ph, victor  santos/enron_development@enron_development   subject siemens fuel specs  jon,  based on a telecon this morning with victor santos, it is my  understanding that you are quite upset because we have contacted siemens  directly to discuss certain liquid fuels specifications. if correct, i find  this reaction to be puzzling as you and i had previously discussed the fact  that i would attempt to establish a dialogue with siemens for the purpose of  expediting their positive response to the ectrs request of september 12,  2000. we also understand that you believe the person identified for us to  contact at siemens may have a negative bias towards fgpc and that our direct  approach is likely to be counterproductive. although we have spoken with  the siemens-westinghouse representative in houston, we have yet to establish  a dialogue with the siemens person referred to above.   more than two months have passed since our original written (urgent)  request to fgpc and the status of this request within the siemens  organization is unclear. as of today we remain uncertain about whether the  appropriate contacts within siemens beyond mr kirschen have been made by  anyone. our impression from talking with the siemens-westinghouse houston  representative is that the ectrs request has not yet been seen by anyone in  germany.  our objective is to resolve the ectrs request in a positive fashion and  as soon as practicable. in keeping with this objective, we are willing to be  flexible in our approach and would welcome your ideas. please bear in mind  that an affirmative response from siemens would also have a beneficial effect  for fgpc because ectrs could then deliver from a wider pool of high quality  condensates. perhaps we could have a conference call between you, ricky,  david and me at noon thursday manila time? the primary purpose of this  conference call would be to clarify your opinion on how best to approach  siemens and to discuss any other areas that may be of concern to fgpc. regards, mike     "
+		}
 	]
 }
 						</script>
