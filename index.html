@@ -297,28 +297,68 @@ ORDER BY d.email_count DESC;
 				<p style="text-align: left;"><em>- Bob: How can we analyze all this text?</em> 🤔 </p>
 				<p style="text-align: left;"><em>- Alice: I have an idea </em> 💡 <em>we can search through it?</em> 🔎</p>
 			</section>
-			<section class="data-auto-animate">
+			<section>
 				<h3>Data Types 📊</h3>
 				<p style="text-align: left;">an attribute of data which tells the computer how the programmer intends to use the data <span style="font-size:40%;font-style: italic"><a href="https://en.wikipedia.org/wiki/Data_type">Wiki</a></span></p>
-				<p class="fragment"><span style="color: lightblue;">3.14</span>, <span style="color: lightgreen;">peter.keohane@enron.com</span>, <span style="color: lightblue;">2001-05-09 14:36:00</span></p>
-				<p class="fragment"><span style="color: lightblue;">number</span>, <span style="color: lightgreen;">string</span>, <span style="color: lightblue;">date</span></p>
+				<table class="fragment">
+					<tr class="fragment">
+						<th><span style="color: lightblue;">3.14</span></th>
+						<th><span style="color: lightgreen;">peter.keohane@enron.com</span></th>
+						<th><span style="color: lightblue;">2001-05-09 14:36:00</span></th>
+					</tr>
+					<tr class="fragment">
+						<th><span style="color: lightblue;">number</span></th>
+						<th><span style="color: lightgreen;">string</span></th>
+						<th><span style="color: lightblue;">datetime</span></th>
+					</tr>
+				</table>
 			</section>
 			<section class="data-auto-animate">
-				<h3>Data Types 📊</h3>
-			<p style="text-align: left;">Examples includes:</p>
-				<lu style="text-align: left;">
-					<li>number</li>
-					<li>String</li>
-					<li>Boolean</li>
-					<li>Array</li>
-					<li>Date</li>
-					<li>Location</li>
-				</lu>
+				<h3>Data operations ⚙️ </h3>
+				<img data-src="img/number_example.png" width="10%" height="10%">
+				<p class="fragment" style="color: lightblue;">number</p>
+				<p class="fragment" style="color: lightgreen;">+ / - x</p>
+			</section>
+			<section class="data-auto-animate">
+				<h3>Data operations ⚙️ </h3>
+				<img data-src="img/string_example.png" width="90%" height="90%">
+				<p class="fragment" style="color: lightblue;">string</p>
+				<p class="fragment" style="color: lightgreen;">CONCAT, LEN, REPLACE, SELECT</p>
+			</section>
+			<section class="data-auto-animate">
+				<h3>Data operations ⚙️ </h3>
+				<img data-src="img/Boolean_example.png" width="35%" height="35%">
+				<p class="fragment" style="color: lightblue;">Boolean</p>
+				<p class="fragment" style="color: lightgreen;">AND, OR, NOT</p>
+			</section>
+			<section class="data-auto-animate">
+				<h3>Data operations ⚙️ </h3>
+				<img data-src="img/array_example.png" width="25%" height="25%">
+				<p class="fragment" style="color: lightblue;">array</p>
+				<p class="fragment" style="color: lightgreen;">IN</p>
+			</section>
+			<section>
+				<h3>Data operations ⚙️ </h3>
+				<img data-src="img/date_example.png" width="20%" height="20%">
+				<p class="fragment" style="color: lightblue;">date</p>
+				<p class="fragment" style="color: lightgreen;">DATE_ADD, DATE_SUB</p>
+			</section>
+			<section>
+				<h3>Data operations ⚙️ </h3>
+				<img data-src="img/location_example.png" width="25%" height="25%">
+				<p class="fragment" style="color: lightblue;">location</p>
+				<p class="fragment" style="color: lightgreen;">DISTANCE, BUFFER</p>
 			</section>
 			<section>
 				<h4></h4>
 				<img data-src="img/elasticsearch_logo.png" width="35%" height="35%">
+
 				<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">Elasticsearch</span> is a fast and scalable search and analytics engine.</span></p>
+			</section>
+			<section>
+				<h3>Data organization</h3></br>
+				<p style="text-align:left;"><span style="color:lightblue;font-weight:bold">Normalization 🔗</span> is generally used with SQL databases to<span style="color:lightgreen;font-weight:bold"> reduces data redundancy</span> and <span style="color:lightgreen;font-weight:bold">eliminates structural dependency</span>.</p></br>
+				<p style="text-align:left;"><span style="color:lightblue;font-weight:bold">Denormalization 📜</span> is used with NoSQL database to<span style="color:lightgreen;font-weight:bold">improves read speed</span></p>
 			</section>
 			<section>
 				<h3>Document Data Model📃</h3>
@@ -613,11 +653,6 @@ ORDER BY d.email_count DESC;
 						</script>
 					</code>
 				</pre>
-			</section>
-			<section>
-				<h3>Data organization</h3></br>
-				<p style="text-align:left;"><span style="color:lightblue;font-weight:bold">Normalization 🔗</span> is generally used with SQL databases to<span style="color:lightgreen;font-weight:bold"> reduces data redundancy</span> and <span style="color:lightgreen;font-weight:bold">eliminates structural dependency</span>.</p></br>
-				<p style="text-align:left;"><span style="color:lightblue;font-weight:bold">Denormalization 📜</span> is used with NoSQL database to<span style="color:lightgreen;font-weight:bold">improves read speed</span></p>
 			</section>
 			<section>
 				<h3>connect with me 🤝🏾</h3>
