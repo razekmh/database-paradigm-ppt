@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/graph_model_user_node.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="graph_model.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.98990818"
+     inkscape:cx="319.22153"
+     inkscape:cy="583.89254"
+     inkscape:window-width="1920"
+     inkscape:window-height="947"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker8547"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Sstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.3) translate(-2.3,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round"
+         id="path8545" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker8321"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.3) rotate(180) translate(-2.3,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round;"
+         id="path8319" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Sstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Sstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.3) translate(-2.3,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round"
+         id="path8047" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Send"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.3) rotate(180) translate(-2.3,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round;"
+         id="path8050" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Send"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.2) rotate(180) translate(6,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path8032" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path8020" />
+    </marker>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="back"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-size:50.8px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="13.702313"
+       y="149.84531"
+       id="text10720"><tspan
+         sodipodi:role="line"
+         id="tspan10718"
+         style="stroke-width:0.264583"
+         x="13.702313"
+         y="149.84531" /></text>
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send)"
+       d="M 48.602405,148.5 H 150.91331"
+       id="path3929"
+       inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <circle
+       style="fill:#add8e6;fill-opacity:1;stroke:#ffffff;stroke-width:1.02306"
+       id="path885"
+       cx="27.447306"
+       cy="148.5"
+       r="22.286772" />
+    <circle
+       style="fill:#add8e6;fill-opacity:1;stroke:#ffffff;stroke-width:1.02306"
+       id="path885-6"
+       cx="175.80768"
+       cy="148.5"
+       r="22.286772" />
+    <text
+       xml:space="preserve"
+       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;fill:#000000"
+       x="10.417731"
+       y="152.41707"
+       id="text3278"><tspan
+         sodipodi:role="line"
+         id="tspan3276"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#000000;stroke-width:0.264583"
+         x="10.417731"
+         y="152.41707">User</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;fill:#000000"
+       x="159.32158"
+       y="151.77597"
+       id="text3278-4-4"><tspan
+         sodipodi:role="line"
+         id="tspan3276-4-4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#000000;stroke-width:0.264583"
+         x="159.32158"
+         y="151.77597">User</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="97.798058"
+       y="146.19911"
+       id="text3278-4-4-7"><tspan
+         sodipodi:role="line"
+         id="tspan3276-4-4-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46667px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#ffffff;stroke-width:0.264583"
+         x="97.798058"
+         y="146.19911">:to</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="-0.39946502"
+       y="176.78365"
+       id="text3278-4-4-7-3-7"><tspan
+         sodipodi:role="line"
+         id="tspan3276-4-4-6-1-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#ffffff;stroke-width:0.264583"
+         x="-0.39946502"
+         y="176.78365"><tspan
+   style="font-weight:bold;font-size:4.23333px"
+   id="tspan32717">user_email:</tspan>ebass@enron.com</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="150.40884"
+       y="176.44859"
+       id="text3278-4-4-7-3-7-2"><tspan
+         sodipodi:role="line"
+         id="tspan3276-4-4-6-1-5-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#ffffff;stroke-width:0.264583"
+         x="150.40884"
+         y="176.44859"><tspan
+   style="font-weight:bold;font-size:4.23333px"
+   id="tspan32717-7">user_email:</tspan>klay@enron.com</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="67.819946"
+       y="137.33606"
+       id="text3278-4-4-7-3-7-2-8"><tspan
+         sodipodi:role="line"
+         id="tspan3276-4-4-6-1-5-1-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#ffffff;stroke-width:0.264583"
+         x="67.819946"
+         y="137.33606"><tspan
+   style="font-weight:bold;font-size:4.23333px"
+   id="tspan32717-7-7">email_date:</tspan>2001-05-09 14:36:00</tspan></text>
+  </g>
+</svg>
