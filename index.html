@@ -193,8 +193,7 @@ investor
 					<code>
 						<script type="text/template">server: 46.101.61.149:5050
 email: db_user@cdh.cam
-password: Theorize_Attentive5_Tantrum
-						</script>
+password: Theorize_Attentive5_Tantrum</script>
 					</code>
 				</pre>
 			</section>
@@ -900,6 +899,11 @@ on a.email_message_id = b.email_message_id;
 			<p class="fragment"><span style="color:lightblue;font-weight:bold">Durability:</span> Data is saved to disk </p>
 		</section>
 		<section>
+			<img data-src="img/neo4j_logo.png">
+			<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">neo4j</span> is
+				graph database management system.</span></p>
+		</section>
+		<section>
 			<h3>Graph Model</h3>
 			<img data-src="img/graph_model_user_node.png" width="70%" height="70%"></br></br>
 			<ul style="text-align: left">
@@ -921,9 +925,96 @@ on a.email_message_id = b.email_message_id;
 			<img class="fragment" data-src="img/graph_model_email_node.png" width="70%" height="70%"></br></br>
 		</section>
 		<section>
+			<h3>The course server</h3>
+			<p>Our <span style="color:lightgreen;font-weight:bold">neo4j</span> is accessible here</p>
+			<pre>
+				<code>
+					<script type="text/template">server: 46.101.61.149:7474
+user: neo4j
+password: Theorize_Attentive5_Tantrum</script>
+				</code>
+			</pre>
+		</section>
+		<section>
 			<h4>Graph Model vs Entity Relationship Model</h4>
-			<img class="fragment" data-src="img/graph_model_three_nodes.png" width="70%" height="70%"></br></br>
-			<img class="fragment" data-src="img/gh_vs_er.png" width="70%" height="70%"></br></br>
+			<img data-src="img/graph_model_three_nodes.png">
+			<pre class="fragment">
+				<code>
+					<script type="text/template">MATCH (a)-[:to]->(b)-[:cc]->(c)
+RETURN a, b, c
+LIMIT 1;</script>
+				</code>
+			</pre>
+			<p class="fragment">One Match query</p>
+		</section>
+		<section class="data-auto-animate">
+			<h4>Graph Model vs Entity Relationship Model</h4>
+			<img  data-src="img/gh_vs_er.png">
+		</section>
+		<section class="data-auto-animate">
+			<h4>Graph Model vs Entity Relationship Model</h4>
+			<img  data-src="img/gh_vs_er.png">
+			<pre>
+				<code>
+					<script type="text/template">SELECT to_sender as a, to_receiver as b, cc_receiver as c
+FROM (SELECT sender as to_sender, receiver as to_receiver
+FROM email_transactions
+WHERE transaction_type LIKE 'to') t
+INNER JOIN
+(SELECT sender as cc_sender, receiver as cc_receiver
+FROM email_transactions
+WHERE transaction_type LIKE 'cc') s
+ON t.to_receiver = s.cc_sender
+LIMIT 1;</script>
+				</code>
+			</pre>
+			<p>Two joins and one select</p>
+		</section>
+		<section>
+			<h3>Centrality 🎯</h3>
+			<p>Centrality is a measure of how important a node is to the graph. It can be measured using many algorthims, but here we will use the <span style="color:lightgreen;font-weight:bold">PageRank</span> algorithm.</p> 
+			<p><span style="color:lightgreen;font-weight:bold">PageRank</span> algorithm measures the importance of each node within the graph, based on the number incoming relationships and the importance of the corresponding source nodes. <span style="font-size:40%;font-style:italic"><a href="https://neo4j.com/docs/graph-data-science/current/algorithms/page-rank/">neo4j</a></span></p>
+		</section>
+		<section>
+			<h4>PageRank </h4>
+			<p>PageRank is introduced in the original Google paper as a function that solves the following equation:</p> 
+			<img data-src="img/page_rank_formula.png" width="60%" height="60%">
+			
+			<div style="text-align: left; font-size: medium;">
+			<p>where,</p>
+			<p>we assume that a page A has pages T<sub>1</sub> to T<sub>n</sub> which point to it.</p>
+			<p><span style="font-style:italic;">d</span> is a damping factor which can be set between 0 (inclusive) and 1 (exclusive). It is usually set to 0.85.</p>
+			<p><span style="font-style:italic;">C(A)</span> is defined as the number of links going out of page <span style="font-style:italic;">A</span>.</p>	
+			<p>This equation is used to iteratively update a candidate solution and arrive at an approximate solution to the same equation.</p>
+			</div>
+			<span style="font-size:40%;font-style:italic"><a href="https://neo4j.com/docs/graph-data-science/current/algorithms/page-rank/">neo4j</a></span>
+		</section>
+		<section class="data-auto-animate">
+			<h4>PageRank</h4>
+			<p>Create the graph</p>
+			<pre>
+				<code>
+					<script type="text/template">CALL gds.graph.create(
+'emailNetwork',            
+'User',             
+'*'               
+)
+YIELD
+graphName AS graph, nodeProjection, nodeCount AS nodes, relationshipProjection, relationshipCount AS rels</script>
+				</code>
+			</pre>
+		</section>
+		<section class="data-auto-animate">
+			<h4>PageRank</h4>
+			<p>Calculate PageRank</p>
+			<pre>
+				<code>
+					<script type="text/template">CALL gds.pageRank.stream('emailNetwork', { maxIterations: 20, dampingFactor: 0.85 })
+YIELD nodeId, score
+RETURN gds.util.asNode(nodeId).user_email AS name, score
+ORDER BY score DESC, name ASC</script>
+				</code>
+			</pre>
 		</section>
 			<section>
 				<h3>connect with me 🤝🏾</h3>
