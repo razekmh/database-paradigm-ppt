@@ -7,7 +7,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg5"
-   inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/graph_model_user_node.png"
+   inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/graph_model_three_node.png"
    inkscape:export-xdpi="600"
    inkscape:export-ydpi="600"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.98990818"
-     inkscape:cx="319.22153"
-     inkscape:cy="583.89254"
+     inkscape:zoom="0.63827342"
+     inkscape:cx="690.92647"
+     inkscape:cy="576.55542"
      inkscape:window-width="1920"
      inkscape:window-height="947"
      inkscape:window-x="0"
@@ -121,12 +121,27 @@
          d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
          id="path8020" />
     </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Send-8"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path8050-9" />
+    </marker>
   </defs>
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="back"
-     style="display:inline">
+     style="display:none"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-size:50.8px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
@@ -138,6 +153,13 @@
          style="stroke-width:0.264583"
          x="13.702313"
          y="149.84531" /></text>
+    <rect
+       style="fill:#000000;stroke:#ffffff;stroke-width:1.88319;stroke-miterlimit:2;stroke-dasharray:none"
+       id="rect79314"
+       width="423.55713"
+       height="126.47736"
+       x="-25.744377"
+       y="100.24337" />
   </g>
   <g
      inkscape:label="Layer 1"
@@ -145,7 +167,7 @@
      id="layer1">
     <path
        style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send)"
-       d="M 48.602405,148.5 H 150.91331"
+       d="M 48.602405,148.50721 H 150.91331"
        id="path3929"
        inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
        inkscape:export-xdpi="600"
@@ -164,7 +186,7 @@
        r="22.286772" />
     <text
        xml:space="preserve"
-       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;fill:#000000"
+       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;fill:#000000;stroke-width:0.264583"
        x="10.417731"
        y="152.41707"
        id="text3278"><tspan
@@ -175,15 +197,15 @@
          y="152.41707">User</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;fill:#000000"
+       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;fill:#000000;stroke-width:0.264583"
        x="159.32158"
-       y="151.77597"
+       y="152.41707"
        id="text3278-4-4"><tspan
          sodipodi:role="line"
          id="tspan3276-4-4"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#000000;stroke-width:0.264583"
          x="159.32158"
-         y="151.77597">User</tspan></text>
+         y="152.41707">User</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
@@ -211,16 +233,46 @@
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="150.40884"
+       x="148.57018"
        y="176.44859"
        id="text3278-4-4-7-3-7-2"><tspan
          sodipodi:role="line"
          id="tspan3276-4-4-6-1-5-1"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#ffffff;stroke-width:0.264583"
-         x="150.40884"
+         x="148.57018"
          y="176.44859"><tspan
    style="font-weight:bold;font-size:4.23333px"
    id="tspan32717-7">user_email:</tspan>klay@enron.com</tspan></text>
+    <circle
+       style="fill:#add8e6;fill-opacity:1;stroke:#ffffff;stroke-width:1.02306"
+       id="path885-6-9"
+       cx="321.49887"
+       cy="148.5"
+       r="22.286772" />
+    <text
+       xml:space="preserve"
+       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;fill:#000000;stroke-width:0.264583"
+       x="305.01279"
+       y="152.41707"
+       id="text3278-4-4-75"><tspan
+         sodipodi:role="line"
+         id="tspan3276-4-4-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#000000;stroke-width:0.264583"
+         x="305.01279"
+         y="152.41707">User</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="293.30283"
+       y="175.79539"
+       id="text3278-4-4-7-3-7-2-88"><tspan
+         sodipodi:role="line"
+         id="tspan3276-4-4-6-1-5-1-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#ffffff;stroke-width:0.264583"
+         x="293.30283"
+         y="175.79539"><tspan
+   style="font-weight:bold;font-size:4.23333px"
+   id="tspan32717-7-1">user_email:</tspan>rick.buy@enron.com</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
@@ -234,5 +286,36 @@
          y="137.33606"><tspan
    style="font-weight:bold;font-size:4.23333px"
    id="tspan32717-7-7">email_date:</tspan>2001-05-09 14:36:00</tspan></text>
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:1.47724;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-8)"
+       d="m 197.83159,148.50721 h 99.22922"
+       id="path3929-6"
+       inkscape:export-filename="/home/geo/Desktop/codebase/database-paradigm-ppt/img/ER_diagram.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="243.94556"
+       y="145.1053"
+       id="text3278-4-4-7-4"><tspan
+         sodipodi:role="line"
+         id="tspan3276-4-4-6-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46667px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#ffffff;stroke-width:0.264583"
+         x="243.94556"
+         y="145.1053">:cc</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="213.96745"
+       y="136.77141"
+       id="text3278-4-4-7-3-7-2-8-3"><tspan
+         sodipodi:role="line"
+         id="tspan3276-4-4-6-1-5-1-5-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#ffffff;stroke-width:0.264583"
+         x="213.96745"
+         y="136.77141"><tspan
+   style="font-weight:bold;font-size:4.23333px"
+   id="tspan32717-7-7-8">email_date:</tspan>2001-05-12 09:44:00</tspan></text>
   </g>
 </svg>
