@@ -1079,24 +1079,48 @@ ORDER BY score DESC, name ASC</script>
 				<img class="fragment" data-src="img/redis_logo.png" width="10%" height="10%">
 				<pre class="fragment">
 					<code>
-						<script type="text/template">user_id:user001,
+						<script type="text/template">user_id: "user001",
 email:"klay@enron.com"</script>
 					</code>
 				</pre>
 				<pre class="fragment">
 					<code>
-						<script type="text/template">>SET user001:email "klay@enron.com"
+						<script type="text/template">redis:6379>SET user001:email "klay@enron.com"
+"OK"
+redis:6379>SET user002:email "jeff.skilling@enron.com"
+"OK"
+redis:6379>SET user002:name "Jeffrey Skilling"
 "OK"</script>
 					</code>
 				</pre>
 				<pre class="fragment">
 					<code>
-						<script type="text/template">>GET user001:email
+						<script type="text/template">redis:6379>GET user001:email
 "klay@enron.com"</script>
 					</code>
 				</pre>
 				<p></p>
 			</section>
+			<section>
+				<h3>
+					Wide Column Database
+				</h3>
+				<img class="fragment" data-src="img/cassandra_logo.png" width="30%" height="30%">
+				<pre class="fragment">
+					<code>
+						<script type="text/template">user_id: "user001",
+email: "klay@enron.com"</script>
+					</code>
+				</pre>
+				<pre class="fragment">
+					<code>
+						<script type="text/template">user_id: "user002",
+email:"jeff.skilling@enron.com",
+name: "Jeffrey Skilling"</script>
+					</code>
+				</pre>
+			</section>
+			
 			<section>
 				<h3>connect with me 🤝🏾</h3>
 				<p>You can find me as <span style="color:lightgreen;font-weight:bold">razemk</span> on:</p>
