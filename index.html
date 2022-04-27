@@ -408,7 +408,7 @@ ORDER BY d.email_count DESC;
 					<li><span style="color:lightgreen;font-weight:bold">A relationship</span> captures how entities are
 						related to one another <span style="font-size:40%;font-style:italic"><a
 								href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model#Entity%E2%80%93relationship_model">wiki</a></span>
-					</li> 
+					</li>
 				</ul>
 			</section>
 			<section>
@@ -760,7 +760,7 @@ ORDER BY d.email_count DESC;
 			</script>
 		</code>
 	</pre>
-	<pre>
+				<pre>
 		<code>
 			<script type="text/template">Elasticsearch 240 msec</script>
 		</code>
@@ -776,7 +776,7 @@ WHERE email_body LIKE '%where are you right now? i am in london%';
 			</script>
 		</code>
 	</pre>
-	<pre>
+				<pre>
 		<code>
 			<script type="text/template">PostgreSQL 1 secs 300 msec</script>
 		</code>
@@ -798,7 +798,7 @@ WHERE email_body LIKE '%where are you right now? i am in london%';
 			</script>
 		</code>
 	</pre>
-	<pre>
+				<pre>
 		<code>
 			<script type="text/template">Elasticsearch 457 hits</script>
 		</code>
@@ -814,16 +814,16 @@ WHERE email_body LIKE '%mark to market%';
 			</script>
 		</code>
 	</pre>
-	<pre>
+				<pre>
 		<code>
 			<script type="text/template">PostgreSQL 153 hits</script>
 		</code>
 	</pre>
 			</section>
-		</section>
-		<section data-auto-animate>
-			<h4>Joins vs keywords</h4>
-			<pre>
+			</section>
+			<section data-auto-animate>
+				<h4>Joins vs keywords</h4>
+				<pre>
 	<code>
 		<script type="text/template">GET enron_emails/_search
 { "size": 10000, 
@@ -837,15 +837,15 @@ WHERE email_body LIKE '%mark to market%';
 		</script>
 	</code>
 </pre>
-<pre>
+				<pre>
 	<code>
 		<script type="text/template">Elasticsearch 150 msec</script>
 	</code>
 </pre>
-		</section>
-		<section data-auto-animate>
-			<h4>Joins vs keywords</h4>
-			<pre>
+			</section>
+			<section data-auto-animate>
+				<h4>Joins vs keywords</h4>
+				<pre>
 	<code>
 		<script type="text/template">SELECT * FROM 
 (SELECT * FROM email_transactions
@@ -858,103 +858,134 @@ on a.email_message_id = b.email_message_id;
 		</script>
 	</code>
 </pre>
-<pre>
+				<pre>
 	<code>
 		<script type="text/template">PostgreSQL 630 msec</script>
 	</code>
 </pre>
-		</section>
-		<section>
-			<h4></h4>
-			<img data-src="img/kibana_logo.png" width="80%" height="80%">
-			<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">Kibana</span> Dashboards</span></p>
-		</section>
-		<section>
-			<h1>Chapter three</h1>
-			<p style="text-align: left;"><em>- Alice: This looks like</em> 🕸️ <em>a network ?</em></p>
-			<p style="text-align: left;"><em>- Bob: Who do you think is the center</em> 🎯 <em>of this network?</em></p>
-		</section>
-		<section class="data-auto-animate">
-			<h3>Database Security 🛡️</h3>
-			<p>Most database management systems offer some security options on <span style="color:lightblue;font-weight:bold"> multiple levels</span>. Depending on the system, the security can cover <span style="color:lightgreen;font-weight:bold">Transport Layer Security</span> and <span style="color:lightgreen;font-weight:bold">Database-Level Security</span> </p>
-		</section>
-		<section class="data-auto-animate">
-			<h3>Database-Level Security 🛡️</h3>
-		</br>
-			<ul style="text-align: left">
-				<li><span style="color:lightgreen;font-weight:bold">Roles and Permissions</span> each user has a <span style="color:lightblue;font-weight:bold">username</span> and a <span style="color:lightblue;font-weight:bold">password</span> to access the database. Each user has their own <span style="color:lightblue;font-weight:bold">access level</span> to the data (view/ modify/delete)</li></br>
-				<li><span style="color:lightgreen;font-weight:bold">Row/Column Level Security</span> access to each <span style="color:lightblue;font-weight:bold">row</span> or <span style="color:lightblue;font-weight:bold">columns</span> can be restricted in some database systems</li></br>
-				<li><span style="color:lightgreen;font-weight:bold">Auditing</span> keeps <span style="color:lightblue;font-weight:bold">audit trail</span> of all the changes and states of the database system</li>
-			</ul>
-		</section>
-		<section class="data-auto-animate">
-			<h3>Data validity 👌🏾</h3>
-			<p>Databases guarantee data validity by adhering to the <span style="color:lightgreen;font-weight:bold">ACID</span> properties. ACID stands for <span style="color:lightblue;font-weight:bold">Atomicity</span>, <span style="color:lightblue;font-weight:bold">Consistency</span>, <span style="color:lightblue;font-weight:bold">Isolation</span>, <span style="color:lightblue;font-weight:bold">Durability</span>.</p>
-		</section>
-		<section class="data-auto-animate">
-			<h3>Data validity 👌🏾</h3>
-			<p class="fragment"><span style="color:lightblue;font-weight:bold">Atomicity:</span> All or nothing </p>
-			<p class="fragment"><span style="color:lightblue;font-weight:bold">Consistency:</span> One valid state to another </p>
-			<p class="fragment"><span style="color:lightblue;font-weight:bold">Isolation:</span>  Concurrently = Sequentially </p>
-			<p class="fragment"><span style="color:lightblue;font-weight:bold">Durability:</span> Data is saved to disk </p>
-		</section>
-		<section>
-			<img data-src="img/neo4j_logo.png">
-			<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">neo4j</span> is
-				graph database management system.</span></p>
-		</section>
-		<section>
-			<h3>Graph Model</h3>
-			<img data-src="img/graph_model_user_node.png" width="70%" height="70%"></br></br>
-			<ul style="text-align: left">
-				<li><span style="color:lightgreen;font-weight:bold">Nodes</span> Similar to the entities, nodes are has unique conceptual identity. <span style="font-size:40%;font-style:italic"><a href="https://neo4j.com/developer/guide-data-modeling/">neo4j</a></span></li></br>
-				<li><span style="color:lightgreen;font-weight:bold">Relationships</span> each relationship connects two nodes, a source node and a target node <span style="font-size:40%;font-style:italic"><a href="https://neo4j.com/developer/guide-data-modeling/">neo4j</a></span></li> </br>
-			</ul>
-		</section>
-		<section>
-			<h3>Graph Model</h3>
-			<img data-src="img/graph_model_user_node.png" width="70%" height="70%"></br></br>
-			<ul style="text-align: left">
-				<li><span style="color:lightgreen;font-weight:bold">Labels</span> represent types. each node can have one or more label. <span style="font-size:40%;font-style:italic"><a href="https://neo4j.com/developer/guide-data-modeling/">neo4j</a></span></li></br>
-				<li><span style="color:lightgreen;font-weight:bold">Properties</span> are name-value pairs of data that you can store on nodes or on relationships. <span style="font-size:40%;font-style:italic"><a href="https://neo4j.com/developer/guide-data-modeling/">neo4j</a></span></li></br>
-			</ul>
-		</section>
-		<section>
-			<h3>Graph Model</h3>
-			<img class="fragment" data-src="img/graph_model_user_node.png" width="70%" height="70%"></br></br>
-			<img class="fragment" data-src="img/graph_model_email_node.png" width="70%" height="70%"></br></br>
-		</section>
-		<section>
-			<h3>The course server</h3>
-			<p>Our <span style="color:lightgreen;font-weight:bold">neo4j</span> is accessible here</p>
-			<pre>
+			</section>
+			<section>
+				<h4></h4>
+				<img data-src="img/kibana_logo.png" width="80%" height="80%">
+				<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">Kibana</span>
+						Dashboards</span></p>
+			</section>
+			<section>
+				<h1>Chapter three</h1>
+				<p style="text-align: left;"><em>- Alice: This looks like</em> 🕸️ <em>a network ?</em></p>
+				<p style="text-align: left;"><em>- Bob: Who do you think is the center</em> 🎯 <em>of this network?</em>
+				</p>
+			</section>
+			<section class="data-auto-animate">
+				<h3>Database Security 🛡️</h3>
+				<p>Most database management systems offer some security options on <span
+						style="color:lightblue;font-weight:bold"> multiple levels</span>. Depending on the system, the
+					security can cover <span style="color:lightgreen;font-weight:bold">Transport Layer Security</span>
+					and <span style="color:lightgreen;font-weight:bold">Database-Level Security</span> </p>
+			</section>
+			<section class="data-auto-animate">
+				<h3>Database-Level Security 🛡️</h3>
+				</br>
+				<ul style="text-align: left">
+					<li><span style="color:lightgreen;font-weight:bold">Roles and Permissions</span> each user has a
+						<span style="color:lightblue;font-weight:bold">username</span> and a <span
+							style="color:lightblue;font-weight:bold">password</span> to access the database. Each user
+						has their own <span style="color:lightblue;font-weight:bold">access level</span> to the data
+						(view/ modify/delete)</li></br>
+					<li><span style="color:lightgreen;font-weight:bold">Row/Column Level Security</span> access to each
+						<span style="color:lightblue;font-weight:bold">row</span> or <span
+							style="color:lightblue;font-weight:bold">columns</span> can be restricted in some database
+						systems</li></br>
+					<li><span style="color:lightgreen;font-weight:bold">Auditing</span> keeps <span
+							style="color:lightblue;font-weight:bold">audit trail</span> of all the changes and states of
+						the database system</li>
+				</ul>
+			</section>
+			<section class="data-auto-animate">
+				<h3>Data validity 👌🏾</h3>
+				<p>Databases guarantee data validity by adhering to the <span
+						style="color:lightgreen;font-weight:bold">ACID</span> properties. ACID stands for <span
+						style="color:lightblue;font-weight:bold">Atomicity</span>, <span
+						style="color:lightblue;font-weight:bold">Consistency</span>, <span
+						style="color:lightblue;font-weight:bold">Isolation</span>, <span
+						style="color:lightblue;font-weight:bold">Durability</span>.</p>
+			</section>
+			<section class="data-auto-animate">
+				<h3>Data validity 👌🏾</h3>
+				<p class="fragment"><span style="color:lightblue;font-weight:bold">Atomicity:</span> All or nothing </p>
+				<p class="fragment"><span style="color:lightblue;font-weight:bold">Consistency:</span> One valid state
+					to another </p>
+				<p class="fragment"><span style="color:lightblue;font-weight:bold">Isolation:</span> Concurrently =
+					Sequentially </p>
+				<p class="fragment"><span style="color:lightblue;font-weight:bold">Durability:</span> Data is saved to
+					disk </p>
+			</section>
+			<section>
+				<img data-src="img/neo4j_logo.png">
+				<p> <span style="text-size:%70;"><span style="color:lightgreen;font-weight:bold">neo4j</span> is
+						graph database management system.</span></p>
+			</section>
+			<section>
+				<h3>Graph Model</h3>
+				<img data-src="img/graph_model_user_node.png" width="70%" height="70%"></br></br>
+				<ul style="text-align: left">
+					<li><span style="color:lightgreen;font-weight:bold">Nodes</span> Similar to the entities, nodes are
+						has unique conceptual identity. <span style="font-size:40%;font-style:italic"><a
+								href="https://neo4j.com/developer/guide-data-modeling/">neo4j</a></span></li></br>
+					<li><span style="color:lightgreen;font-weight:bold">Relationships</span> each relationship connects
+						two nodes, a source node and a target node <span style="font-size:40%;font-style:italic"><a
+								href="https://neo4j.com/developer/guide-data-modeling/">neo4j</a></span></li> </br>
+				</ul>
+			</section>
+			<section>
+				<h3>Graph Model</h3>
+				<img data-src="img/graph_model_user_node.png" width="70%" height="70%"></br></br>
+				<ul style="text-align: left">
+					<li><span style="color:lightgreen;font-weight:bold">Labels</span> represent types. each node can
+						have one or more label. <span style="font-size:40%;font-style:italic"><a
+								href="https://neo4j.com/developer/guide-data-modeling/">neo4j</a></span></li></br>
+					<li><span style="color:lightgreen;font-weight:bold">Properties</span> are name-value pairs of data
+						that you can store on nodes or on relationships. <span
+							style="font-size:40%;font-style:italic"><a
+								href="https://neo4j.com/developer/guide-data-modeling/">neo4j</a></span></li></br>
+				</ul>
+			</section>
+			<section>
+				<h3>Graph Model</h3>
+				<img class="fragment" data-src="img/graph_model_user_node.png" width="70%" height="70%"></br></br>
+				<img class="fragment" data-src="img/graph_model_email_node.png" width="70%" height="70%"></br></br>
+			</section>
+			<section>
+				<h3>The course server</h3>
+				<p>Our <span style="color:lightgreen;font-weight:bold">neo4j</span> is accessible here</p>
+				<pre>
 				<code>
 					<script type="text/template">server: 46.101.61.149:7474
 user: neo4j
 password: Theorize_Attentive5_Tantrum</script>
 				</code>
 			</pre>
-		</section>
-		<section>
-			<h4>Graph Model vs Entity Relationship Model</h4>
-			<img data-src="img/graph_model_three_nodes.png">
-			<pre class="fragment">
+			</section>
+			<section>
+				<h4>Graph Model vs Entity Relationship Model</h4>
+				<img data-src="img/graph_model_three_nodes.png">
+				<pre class="fragment">
 				<code>
 					<script type="text/template">MATCH (a)-[:to]->(b)-[:cc]->(c)
 RETURN a, b, c
 LIMIT 1;</script>
 				</code>
 			</pre>
-			<p class="fragment">One Match query</p>
-		</section>
-		<section class="data-auto-animate">
-			<h4>Graph Model vs Entity Relationship Model</h4>
-			<img  data-src="img/gh_vs_er.png">
-		</section>
-		<section class="data-auto-animate">
-			<h4>Graph Model vs Entity Relationship Model</h4>
-			<img  data-src="img/gh_vs_er.png">
-			<pre>
+				<p class="fragment">One Match query</p>
+			</section>
+			<section class="data-auto-animate">
+				<h4>Graph Model vs Entity Relationship Model</h4>
+				<img data-src="img/gh_vs_er.png">
+			</section>
+			<section class="data-auto-animate">
+				<h4>Graph Model vs Entity Relationship Model</h4>
+				<img data-src="img/gh_vs_er.png">
+				<pre>
 				<code>
 					<script type="text/template">SELECT to_sender as a, to_receiver as b, cc_receiver as c
 FROM (SELECT sender as to_sender, receiver as to_receiver
@@ -968,31 +999,42 @@ ON t.to_receiver = s.cc_sender
 LIMIT 1;</script>
 				</code>
 			</pre>
-			<p>Two joins and one select</p>
-		</section>
-		<section>
-			<h3>Centrality 🎯</h3>
-			<p>Centrality is a measure of how important a node is to the graph. It can be measured using many algorthims, but here we will use the <span style="color:lightgreen;font-weight:bold">PageRank</span> algorithm.</p> 
-			<p><span style="color:lightgreen;font-weight:bold">PageRank</span> algorithm measures the importance of each node within the graph, based on the number incoming relationships and the importance of the corresponding source nodes. <span style="font-size:40%;font-style:italic"><a href="https://neo4j.com/docs/graph-data-science/current/algorithms/page-rank/">neo4j</a></span></p>
-		</section>
-		<section>
-			<h4>PageRank </h4>
-			<p>PageRank is introduced in the original Google paper as a function that solves the following equation:</p> 
-			<img data-src="img/page_rank_formula.png" width="60%" height="60%">
-			
-			<div style="text-align: left; font-size: medium;">
-			<p>where,</p>
-			<p>we assume that a page A has pages T<sub>1</sub> to T<sub>n</sub> which point to it.</p>
-			<p><span style="font-style:italic;">d</span> is a damping factor which can be set between 0 (inclusive) and 1 (exclusive). It is usually set to 0.85.</p>
-			<p><span style="font-style:italic;">C(A)</span> is defined as the number of links going out of page <span style="font-style:italic;">A</span>.</p>	
-			<p>This equation is used to iteratively update a candidate solution and arrive at an approximate solution to the same equation.</p>
-			</div>
-			<span style="font-size:40%;font-style:italic"><a href="https://neo4j.com/docs/graph-data-science/current/algorithms/page-rank/">neo4j</a></span>
-		</section>
-		<section class="data-auto-animate">
-			<h4>PageRank</h4>
-			<p>Create the graph</p>
-			<pre>
+				<p>Two joins and one select</p>
+			</section>
+			<section>
+				<h3>Centrality 🎯</h3>
+				<p>Centrality is a measure of how important a node is to the graph. It can be measured using many
+					algorthims, but here we will use the <span style="color:lightgreen;font-weight:bold">PageRank</span>
+					algorithm.</p>
+				<p><span style="color:lightgreen;font-weight:bold">PageRank</span> algorithm measures the importance of
+					each node within the graph, based on the number incoming relationships and the importance of the
+					corresponding source nodes. <span style="font-size:40%;font-style:italic"><a
+							href="https://neo4j.com/docs/graph-data-science/current/algorithms/page-rank/">neo4j</a></span>
+				</p>
+			</section>
+			<section>
+				<h4>PageRank </h4>
+				<p>PageRank is introduced in the original Google paper as a function that solves the following equation:
+				</p>
+				<img data-src="img/page_rank_formula.png" width="60%" height="60%">
+
+				<div style="text-align: left; font-size: medium;">
+					<p>where,</p>
+					<p>we assume that a page A has pages T<sub>1</sub> to T<sub>n</sub> which point to it.</p>
+					<p><span style="font-style:italic;">d</span> is a damping factor which can be set between 0
+						(inclusive) and 1 (exclusive). It is usually set to 0.85.</p>
+					<p><span style="font-style:italic;">C(A)</span> is defined as the number of links going out of page
+						<span style="font-style:italic;">A</span>.</p>
+					<p>This equation is used to iteratively update a candidate solution and arrive at an approximate
+						solution to the same equation.</p>
+				</div>
+				<span style="font-size:40%;font-style:italic"><a
+						href="https://neo4j.com/docs/graph-data-science/current/algorithms/page-rank/">neo4j</a></span>
+			</section>
+			<section class="data-auto-animate">
+				<h4>PageRank</h4>
+				<p>Create the graph</p>
+				<pre>
 				<code>
 					<script type="text/template">CALL gds.graph.create(
 'emailNetwork',            
@@ -1003,11 +1045,11 @@ YIELD
 graphName AS graph, nodeProjection, nodeCount AS nodes, relationshipProjection, relationshipCount AS rels</script>
 				</code>
 			</pre>
-		</section>
-		<section class="data-auto-animate">
-			<h4>PageRank</h4>
-			<p>Calculate PageRank</p>
-			<pre>
+			</section>
+			<section class="data-auto-animate">
+				<h4>PageRank</h4>
+				<p>Calculate PageRank</p>
+				<pre>
 				<code>
 					<script type="text/template">CALL gds.pageRank.stream('emailNetwork', { maxIterations: 20, dampingFactor: 0.85 })
 YIELD nodeId, score
@@ -1015,7 +1057,46 @@ RETURN gds.util.asNode(nodeId).user_email AS name, score
 ORDER BY score DESC, name ASC</script>
 				</code>
 			</pre>
-		</section>
+			</section>
+			<section>
+				<h1>Chapter four</h1>
+				<p style="text-align: left;"><em>- Alice: Are there any other models to explore?</em> 🤔 </p>
+				<p style="text-align: left;"><em>- Bob: Maybe </em> 🤷🏾 <em>Let's do some research</em> 🔎</p>
+			</section>
+			<section>
+				<h2>
+					Database Paradigms📚
+				</h2>
+				<p class="fragment" > what do we know so far?</p>
+				<img class="fragment" data-src="img/Postgresql_elephant.png" width="10%" height="10%">
+				<img class="fragment" data-src="img/elasticsearch_logo.png" width="10%" height="10%">
+				<img class="fragment" data-src="img/neo4j_logo.png" width="9%" height="9%">
+			</section>
+			<section>
+				<h3>
+					Key Value Database
+				</h3>
+				<img class="fragment" data-src="img/redis_logo.png" width="10%" height="10%">
+				<pre class="fragment">
+					<code>
+						<script type="text/template">user_id:user001,
+email:"klay@enron.com"</script>
+					</code>
+				</pre>
+				<pre class="fragment">
+					<code>
+						<script type="text/template">>SET user001:email "klay@enron.com"
+"OK"</script>
+					</code>
+				</pre>
+				<pre class="fragment">
+					<code>
+						<script type="text/template">>GET user001:email
+"klay@enron.com"</script>
+					</code>
+				</pre>
+				<p></p>
+			</section>
 			<section>
 				<h3>connect with me 🤝🏾</h3>
 				<p>You can find me as <span style="color:lightgreen;font-weight:bold">razemk</span> on:</p>
