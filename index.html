@@ -1071,6 +1071,9 @@ ORDER BY score DESC, name ASC</script>
 				<img class="fragment" data-src="img/Postgresql_elephant.png" width="10%" height="10%">
 				<img class="fragment" data-src="img/elasticsearch_logo.png" width="10%" height="10%">
 				<img class="fragment" data-src="img/neo4j_logo.png" width="9%" height="9%">
+				<p><span style="font-size:40%;font-style:italic"><a
+					href="https://fireship.io/lessons/top-seven-database-paradigms/">source for this section</a></span>
+				 </p>
 			</section>
 			<section>
 				<h3>
@@ -1285,7 +1288,14 @@ name: "Jeffrey Skilling"</script>
 				</div>
 			</section>
 			<section>
-				<h2>Building this course 🚧</h2>
+				<h2>Building this course🚧</h2>
+				<p>it is all in one command</p>
+				<pre class="fragment">
+					<code>
+						<script type="text/template">ansible-playbook -e @local_settings.enc --vault-password-file main.pass 01_install_docker.yml 02_get_data.yml 03_build_database.yml -K</script>
+					</code>
+				</pre>
+				
 			</section>
 			<section>
 				<img data-src="img/build.png" width="100%" height="100%">
