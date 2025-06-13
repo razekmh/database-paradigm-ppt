@@ -54,7 +54,7 @@
     "node-qunit-puppeteer": "^2.1.0",
     "qunit": "^2.17.2",
     "rollup": "^2.48.0",
-    "@rollup/plugin-terser": "^0.1.0",
+    "@rollup/plugin-terser": "^0.4.0",
     "sass": "^1.39.2",
     "yargs": "^15.1.0"
   },
